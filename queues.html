@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<head>
+    <title>Queues</title>
+</head>
+<body>
+    <h1>Queues</h1>
+    <h2>What are they?</h2>
+    <p>Queues are an abstract data structure that orders a collection linearly,
+        in sequential order. You can think of it like being in a line at a store.<br>
+        The first one in line is the first to be processed (First-In, First-Out).
+    </p>
+    <img src = "images/queue-demo.jpg" alt = "queue img">
+    <p>
+        Queue architecture can be used in cases where one needs to access elements
+        in the order in which they were added. The queue tool in apps <br>
+        such as Netflix, Spotify, and YouTube are great examples. Anything you
+        add will eventually be accessed, but not before the ones waiting prior.
+    </p>
+
+    <h2>Operations</h2>
+    <p>A queue's main, distinct operations include: <i>enqueue</i>,
+    <i> dequeue</i>, <i>front</i>, and <i>rear</i>.</p>
+    <h3>Enqueue</h3>
+    <p>Enqueueing is the operation in which an element is added to
+        the queue collection. The element is added to back of the line.
+    </p>
+    <h3>Dequeue</h3>
+    <p>Dequeueing is the operation that removes an element from the 
+        collection. This element is the one at the front of the queue, <br>
+        or the earliest one to be added from the current collection.
+    </p>
+    <h3>Front & Rear</h3>
+    <p>These operations are similar in function to <i>peak</i> from
+     a stack. <b>Front</b> reveals the element at the front of the<br>
+    queue without removing it, and <b>Rear</b> does the same for 
+    the end of the queue.
+    </p>
+    <div id = "pros-cons">
+        <h2>The Advantages</h2>
+        <ul>
+            <li>Ideal for maintaining sequential order</li>
+            <li>Simple and easy to maintain</li>
+            <li>Can be overriden for increased functionality (i.e. priority queues)</li>
+        </ul>
+        <h2>The Disadvantages</h2>
+        <ul>
+            <li>Random access is not a feature of queues</li>
+            <li>Expensive to search for particular elements</li>
+            <li>Queues typically require capacities</li>
+        </ul>
+    </div>
+
+    <div id = "code-implementation">
+        <h2>Code Implementation (Java)</h2>
+        <p>Here we will use an array implementation for a queue.</p>
+        <pre><code>
+            public class Queue&ltT&gt {
+	
+                private int capacity;
+                private int size;
+                T[] queue;
+                private int front, rear;
+                
+                public Queue(int capacity) {
+                    //Creating object array that is casted to T data type 
+                    //Usually bad practice, but for the sake of example
+                    queue = (T[]) new Object[capacity];
+                    
+                    this.capacity=capacity;
+                    this.front=0;
+                    this.rear=-1;
+                    this.size = 0;
+                }
+                
+                public void enqueue(T data) throws Exception {
+                    
+                    if(isFull()) {
+                        throw new Exception("Queue is full!");
+                    } else {
+                        
+                        rear = (rear + 1) % capacity; //update pointer of rear
+                         
+                        queue[rear] = data; //add to new rear 
+                        size++; //increment size
+                    }		
+                }
+                
+                public T dequeue() throws Exception {
+                    //if queue is empty
+                    if(size==0) {
+                        throw new Exception("Queue is empty!");
+                    } else {
+                        T data = queue[front];
+                        
+                        front = (front+1) % capacity; //update front pointer
+                        size--;
+                        
+                        return data;
+                    }
+                }
+                
+                //checks if queue is full
+                private boolean isFull() {
+                    return (size==capacity);
+                }
+            }
+        </code></pre>
+    </div>
+</body>

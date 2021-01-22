@@ -1,0 +1,87 @@
+<style>
+
+    .top {
+        text-align: center;
+    }
+
+    .middle {
+        margin-left: 50px;
+    }
+
+</style>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrays</title>
+    <script src=""></script>
+</head>
+<body>
+    <header class= "top">
+        <h1>Arrays</h1>
+
+        <div id = "definition-div">
+            <h2 id = "definition">What are they?</h2>
+            <p>An array is a collection of elements, usually of the same data type
+                (such as an integer or string), that is put together in a list-fashion.<br>
+                Each element has its own spot in the list, which can be accessed directly
+                in O(1) time if the index is known beforehand.<br>
+            </p>
+        </div>
+        <div id = "array-img" style="margin-right: -80px">
+            <img src = "http://javatutorial.net/wp-content/uploads/2015/01/java_array.jpg">;
+        </div>
+    </header>
+
+    <div id = "pros-cons" class ="middle" >
+        <h2 id = "advantages">The Advantages</h2>
+        <p>With an array, you can access any spot in it in O(1) time. 
+            Whether you are looking for an element in the front or back<br>
+            list does not matter in terms of time complexity.
+        </p>
+        <p>  
+            If an element is known before hand, you can find it immediately
+            Arrays make it easy and simple to access data, especially
+            if they are of the same type.
+        </p>   
+        <p>
+            Arrays can also provide a container for all related data, 
+            which makes for better organization.
+        </p>
+
+        <h2 id = "disadvantages">The Disadvantages</h2>
+        <p>Arrays are a fixed-length data structure. Their size
+            must be set upon initializtion, which can be incovenient<br>
+            if the number of elements coming in is unknown or ongoing.
+        </p>
+        <p>An array's elements are stored in sequential memory locations,
+            making insertion and deletion difficult as the target approaches<br>
+            the middle of the array.
+        </p>
+        <p>
+            Another disadvantage is their inefficieny in checking for a particular
+            element whose index in unknown. In order to find an element this way,
+            one <br> must traverse the entire list from the beginning (assuming the
+            array is unsorted). The search time has a potential O(n) time.
+        </p>
+    </div>
+    <div id="code">
+        <h2 class = "middle">Code Implementation (Java)</h2>
+        <pre>
+            <code>public class ArrayDemo {
+                public static void main(String[] args) {
+                    
+                    int[] array = new int[5]; //initializing a list of 5 integer elements
+                    
+                    array[0] = 3; //putting integer 3 at index 0
+                    
+                    array[5] = 4; //will result in a null pointer exception because
+                                  //index 5 is out of the array index bounds!
+                    
+                }
+            }</code></pre>
+    </div>
+</body>
+</html>

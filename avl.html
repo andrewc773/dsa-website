@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<head>
+    <title>AVL Trees</title>
+
+</head>
+
+<body>
+    <h1>AVL Trees</h1>
+    <h2>What is it?</h2>
+        <p>AVL trees are another example of a self balancing tree. The rule to keep
+            in mind for these trees is that <b>the difference in height must be <br>
+            less than or equal to 1 (height&lt=1)</b>. 
+        </p>
+        <p>
+            AVL trees self-correct when this rule is violated, using rotations. In code,
+            this consists of redirecting pointers, which we will see later.
+        </p>
+
+    <h2>Operations</h2>
+
+    <h3>Insertion</h3>
+        <p>Following the insertion of a node into the correct spot in the tree, 
+            the tree must rebalance itself to maintian the proper height difference<br>
+            inside of the AVL tree. We do this by comparing the left and right of 
+            nodes beginning with the node just recently added. Below are examples:
+        </p>
+        <img src = "images/AVL tree insert demo crop.jpg" alt = "avl tree insert image">
+        <figcaption>Above, 23 is being added to the AVL tree. When it is initally placed,
+             it creates a height difference among nodes that is greater than one.<br>
+            To fix this, the tree self-corrects the balance by performing a left rotation.
+            This is because the imbalance occurs in the right child's right subtree of<br>
+            the node where the initial height difference greater than one, occurs.
+        </figcaption>
+
+    <h3>Deletion</h3>
+        <p>Following the deletion of a node, find the first unbalanced node starting
+             at the spot at which the former node was removed. Travel up until the<br>
+             root is reached. Any difference in height greater than 1 results in the 
+             tree being rebalancd. Below are some other examples:
+        </p>
+
+    <h2>Code Implementation (Java)</h2>
+        <pre><code>
+            insert code here
+        </code></pre>
+</body>

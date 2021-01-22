@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel = "stylesheet" href="">
+    <title>Hash Tables</title>
+    <script src=""></script>
+</head>
+<body>
+    <header>
+        <h1>Hash Tables</h1>
+    </header>
+
+    <h2>What are they?</h2>
+        <p>A hash table is a data structure that can map a key to a value in 
+        an array-like structure, using a hash function.<br>It is highly 
+        efficient for adding, removing, and retrieving data because of its
+        key-value pair system.
+        </p>
+    <img src = "images/hash-table-demo.jpg" alt = "hash table demo img">
+    <h2>Hashing Function</h2>
+        <p>The job of the hash function is to generate a unique index
+        with a provided key, and the value will be stored at this index.<br>
+        It is important that the function creates a <b>hash code</b> that is 
+        usually unique- this minimizes collisions which can slow down the 
+        operations of the table.<br>The hash code is then compressed to fit into the range
+        of indices of the table. 
+        </p>
+    <h2>Hash Collisions</h2>
+    <h3>What are they?</h3>
+        <p>Hash collisions occur when two distinct keys are mapped to the same spot in the 
+        hash table. <br>This happens when the generated hash codes are compressed.
+        </p>
+    <h3>How are they handled?</h3>
+        <p>Hash collisions can be handled using two different approaches:<br>
+            <i>open addressing</i> and <i>separate chaining</i>.</p>
+    <h3>Open Addressing</h3>
+    
+    <p>When a value is being mapped to an index that already exists, we can
+        check if any nearby indices are empty so we can place it there instead.<br>
+        Checking for empty spots in increments of one is known as <b>linear probing</b>
+        and squaring the increments (k+1, k+4, k+9, etc) is <b>quadratic probing</b>.
+    </p>
+    <img src = "images/linear-probing.jpg" alt = "linear-probing img">
+    <h4>Issues with probing</h4>
+        <p>One issue with using probing is that it can lead to <b>clustering</b>.
+        This is when a particular range of the table is cluttered with many <br>
+        taken spots. This can cause future probing to take much longer, since
+        a longer traversal is made each time to keep finding an empty spot.</p>
+        <img src = "images/clustered-img.jpg" alt = "img of clustered table">
+    <h3>Separate chaining</h3>
+    <p>Here, we scrap the idea of checking for nearby empty spots. Instead, we treat
+        each index as a bucket that can store multiple different values.<br>The bucket
+        can be any data structure that such as a linked list or sorted tree. When
+        a value is being mapped to an index, it is added to the index's bucket.<br>
+        Using a linked list example, this would meaning adding another node to the linked
+        list containing the new value.
+    </p>
+    <img src = "images/seperate-chaining.jpg" alt = "separate chaining img">
+
+    <h2>Performance</h2>
+    <p>Hashtables can perform insertion, deletion, and searching at O(1) time, 
+        making them an optimal solution for many problems in computer science.<br>
+        
+        They have the advantage of easy access anywhere just like with arrays, but on top of that,
+        its contents are quickly found if one knows the key.
+    </p>
+</body>

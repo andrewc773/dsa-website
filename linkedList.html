@@ -1,0 +1,135 @@
+<style>
+    
+
+</style>
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>LinkedList</title>
+        <script src=""></script>
+    </head>
+    <body>
+        <h1>Linked Lists</h1>
+        <div id = "definition-div">
+            <h2>What are they?</h2>
+            <img src="https://cdn.softwaretestinghelp.com/wp-content/qa/uploads/2019/06/A-basic-layout-of-the-doubly-linked-list.png">
+            <figcaption><b>A Doubly-linked List</b></figcaption>
+            <p>Linked lists are linear data structures composed of nodes
+                that hold the element's data and a reference to<br>
+                the next node in the list. The beginning of the list is
+                the head node, and the end of the list is indicated by the tail.
+            </p>
+            <p>    
+                There are two kinds of linked
+                lists: singly and doubly linked. Singly-linked holds a reference<br>
+                to the next node in the sequence; Doubly-linked holds one for
+                the next node, and one for the previous node.
+            </p>
+        </div>
+
+        <div id="alg-complexity-div">
+            <h2>Algorithmic Complexity</h2>
+            <p>
+                Search time for a linked list element has O(n) time. Finding a
+                particular element requires traversing from the beginning of<br>
+                the list, to the end, potentially. Luckily, insertion and deletion
+                are done in constant O(1) time.  
+            </p>
+        </div>
+
+        <div id="pros-cons">
+            <h2>Advantages</h2>
+            <ul>
+               <li>Insertion/Deletion from ends of list done in constant time</li>
+               <li>No reallocation of memory or change in structure when adding/removing nodes</li>
+               <li>Size of the list does not need to be predetermined or fixed</li>
+               <li>Simple way to containerize homogenous set of data</li> 
+            </ul>
+
+            <h2>Disadvantages</h2>
+            <ul>
+                <li>Inability to randomly access elements of list</li>
+                <li>Searching for particular element can require traversing the entire list</li>
+                <li>Bidirectional traversal can be difficult without allocating more memory<br>for
+                a doubly-linked list</li>
+            </ul>     
+        </div>
+        <img src ="https://cdn.softwaretestinghelp.com/wp-content/qa/uploads/2019/06/structure-of-a-singly-linked-list.png" >
+        <figcaption><b>A Singly-linked List</b></figcaption>
+        <div id="code">
+            <h2>Code Implementation (Java)</h2>
+            <pre>
+            <code>//Basic class for a singly-linked list
+                public class LinkedList<T> {
+                    
+                    //Private class defining the node (components that make up the list)
+                    private class Node {
+                        T data;
+                        Node next;
+                        
+                        Node(T data) {
+                            this.data=data; //sets data
+                            this.next = null; //next node is null (for now)
+                        }
+                    }
+                    //Fields for the list
+                    Node head;
+                    int size;
+                    
+                    public LinkedList(Node n){ //contructor that builds a list with one
+                        this.head = n;		   //starting node	
+                        size=0;
+                    }	
+                    
+                }</code>
+                </pre>
+        </div>
+        <div id = "recursion-div">
+            <h2>Recursion</h2>
+            <p>
+                Recursion is often used when implementing linked lists. The base cases for recursive
+                linked list functions often are reaching a <br> node with its next node pointing to 
+                null (reaching the tail), or traversing to a null node (no more nodes to traverse).<br>
+                Below are a few recsurive solutions to common linked list coding problems. Try solving
+                them on your own before checking the answer.
+            </p>
+            <!----Don't forget to implement toggle button for answer!!-->
+            <h3>Reversing a singly-linked list</h3>
+            <pre><code>
+                public Node reverse(Node curr, Node prev) { //start with curr==head and prev==null
+                    if(curr.next==null) {
+                        curr.next = prev;
+                        
+                        return curr;
+                    }
+                    
+                    Node rest = reverse(curr.next, curr);
+                    
+                    curr.next = prev;
+                    
+                    return prev;
+                    
+                }
+            </code></pre>
+            <h3>Search for an element in list</h3>
+            <pre><code>
+                //This method verifies if element exists in list, recursively
+
+                public boolean search(Node curr, T data) {
+                    //reached end of list and no matching data found
+                    if(curr==null) {
+                        return false;
+                    }
+
+                    //returns true if match found, or traverses to next element in the list
+                    return (curr.data.equals(data))? true: search(curr.next, data);
+                }
+            </code></pre>
+        </div>
+
+    </body>
+
+</html>
