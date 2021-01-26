@@ -13,19 +13,36 @@
         font-size: 20px;
         font-family: 'Courier New', Courier, monospace;
     }
+    
+    .ds-button {
+        padding: 10px;
+        margin: 20px;
+        
+    }
 
     header {
         display: flex;
         flex-direction: column;
-        justify-content: space-evenly;
         align-items: center;
-
+        justify-content: space-evenly;
         background-color: black;
         color: white;
     }
-
+    
     #ds-list {
         display: flex;
+        flex-direction: row;
+        align-items: center;
+        flex-wrap: wrap;
+
+        width : 35%;
+    }
+
+    #main-body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        
     }
 </style>
 <!DOCTYPE html>
@@ -49,27 +66,20 @@
             their retrieval and modification to be efficient in memory and time.
         </p>
         <--->
-        <div>
+        <div id = "main-body">
             <h3>Common Structures</h3>
 
             <div id="ds-list">
-                <ul id = "ds list">
-                    <li><a href="arrays.html">Arrays</a></li>
-                    <li><a href= "linkedList.html">Linked Lists</a></li>
-                    <li><a href= "trees.html">Trees</a>
-                        <ul>
-                        <li><a href="bst.html">Binary Search Tree</a></li>
-                        <li><a href="rbTree.html">Red-Black Tree</a></li>    
-                        <li><a href = "avl.html">AVL Tree</a></li>
-                        <li><a href = "heap.html">Heap</a></li>
-                        </ul>
-                    </li>
-                    <li><a href = "stacks.html">Stacks</a></li>
-                    <li><a href = "queues.html">Queues</a></li>
-                    <li><a href = "hashtable.html">Hash Table</a></li>
-                    
-                </ul> 
-
+                    <button class = "ds-button"><a href="arrays.html">Arrays</a></button>
+                    <button class = "ds-button"><a href= "linkedList.html">Linked Lists</a></button>
+                    <button class = "ds-button"><a href = "stacks.html">Stacks</a></button>
+                    <button class = "ds-button"><a href = "queues.html">Queues</a></button>
+                    <button class = "ds-button"><a href = "hashtable.html">Hash Table</a></button>
+                    <button class = "ds-button"><a href= "trees.html">Trees</a></button>
+                    <button class = "ds-button"><a href="bst.html">Binary Search Tree</a></button>
+                    <button class = "ds-button"><a href="rbTree.html">Red-Black Tree</a></button>   
+                    <button class = "ds-button"><a href = "avl.html">AVL Tree</a></button>
+                    <button class = "ds-button"><a href = "heap.html">Heap</a></button>
             </div>
 
         </div>
