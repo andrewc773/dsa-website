@@ -1,24 +1,8 @@
 <style>
-    h1 {
-         font-size: 50px;
-         font-family: monospace;
-    }
-
-    h2 {
-        font-size: 30px;
-        font-family: 'Courier New', Courier, monospace;
-    }
-
     h3 {
-        font-size: 20px;
-        font-family: 'Courier New', Courier, monospace;
-    }
-    
-    .ds-button {
-        padding: 10px;
-        margin: 20px;
         
     }
+
 
     header {
         display: flex;
@@ -28,21 +12,27 @@
         background-color: black;
         color: white;
     }
-    
-    #ds-list {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        flex-wrap: wrap;
 
-        width : 35%;
+    #ds-list {
+        display: grid;
+
+        grid-template-columns: 300px 300px 300px 300px 300px;
+        column-gap: 10px;
+        row-gap: 10px;
+
+        justify-items: center;
+
+    }
+
+    #title-of-list {
+        font-size: 20px;
+        font-family: 'Courier New', Courier, monospace;
+        padding: 20px;
     }
 
     #main-body {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        
+        display: grid;
+        justify-items: center;
     }
 </style>
 <!DOCTYPE html>
@@ -51,26 +41,38 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Data Structures and Algorithms</title>
-    <script src=""></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="my-js/first.js"></script>
 </head>
 <body>
-    <header >
-        <h1>Data Structures</h1>
-        <h2>An Introduction</h2>
-        <button><a href="about.html">About</a></button>
-    </header>
+    <div id = "header"></div>
+    <div id="main-body">
+        <div id="title-of-list"><h3>Common Structures</h3></div>
+        <div id="ds-list">
+            <input id="array-btn" type="image" src="images/array btn.jpeg" width="275" height="275">
+            <input id="linkedlist-btn"  type="image" src="images/linked list btn.jpeg" width="275" height="275">
+            <input  id="stack-btn" type="image" src="images/stack button.jpeg" width="275" height="275">
+            <input  id="queue-btn" type="image" src="images/queue btn.jpeg" width="275" height="275">
+            <input  id="htable-btn" type="image" src="images/hash table btn.jpeg" width="275" height="275">
+            <input  id="tree-btn" type="image" src="images/tree btn.jpeg" width="275" height="275">
+            <input  id="bst-btn" type="image" src="images/bst button.jpeg" width="275" height="275">
+            <input  id="heap-btn" type="image" src="images/heap tree.jpeg" width="275" height="275">
+            <input  id="rbtree-btn" type="image" src="images/rb tree btn.jpeg" width="275" height="275">
+            <input  id="avl-btn" type="image" src="images/avl trees.jpeg" width="275" height="275">
+        </div>
+    </div>
+
+
+
+
     <!----
-    <div id = "data-structures">
-        <h2>What are Data Structures?</h3>
-        <p>Data Structures are ways in which computer scientists store and organize data so as to allow
-            their retrieval and modification to be efficient in memory and time.
-        </p>
-        <--->
-        <div id = "main-body">
-            <h3>Common Structures</h3>
+                <div id = "main-body">
+            
+            <div id="title-of-list"><h3>Common Structures</h3></div>
+            
 
             <div id="ds-list">
-                    <button class = "ds-button"><a href="arrays.html">Arrays</a></button>
+                    <input type="image" src="images/array btn.jpeg" width="300" height="300">
                     <button class = "ds-button"><a href= "linkedList.html">Linked Lists</a></button>
                     <button class = "ds-button"><a href = "stacks.html">Stacks</a></button>
                     <button class = "ds-button"><a href = "queues.html">Queues</a></button>
@@ -84,30 +86,16 @@
 
         </div>
 
-    <!---
-    <div id = "algorithms">
-        <h2>What are Algorithms?</h3>
-        <p>Algorithms are detailed procedures that complete a task. Computer
-            scientists use them to solve well-defined computational problems.
-        </p>
-        <h3>Common Algorithms for specific topics</h3>
-        <ul id = "alg-type list">
-            <li>Graph Traversal</li>
-                <ul id="graph-traversal list">
-                    <li>Breadth-First Search</li>
-                    <li>Depth-First Search</li>
-                    <li>Dijkstra's Algorithm</li>
-                    <li>A* Search</li>
-                </ul>
-            <li>Sorting</li>
-                <ul id = "sort list">
-                    <li>MergeSort</li>
-                    <li>QuickSort</li>
-                </ul>
+        #ds-list {
+        display: grid;
+        grid-template-columns: 100px 100px 100px 100px 100px;
+        column-gap: 10px;
+        row-gap: 10px;
 
-        </ul>
-    </div>
-    <!-->
+    }
+        
+        ><!-->
+
     
 
 </body>

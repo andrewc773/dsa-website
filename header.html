@@ -1,0 +1,84 @@
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        text-decoration: none;
+        list-style: none;
+    }
+    .header {
+        background-color: black;
+        height : 80px;
+        width : 100%;
+    }
+    .inner-header {
+        background-color:black;
+        height : 100%;
+        width: 1000px;
+        display: block;
+        margin: 0 auto; 
+    }
+    .logo-container {
+        height: 100%;
+        display: table;
+        float: left;
+    }
+
+    .logo-container h1 {
+        color: white;
+        font-size: 32px;
+        font-weight: 100;
+        font-family: monospace;
+        vertical-align: middle;
+        height: 100%;
+        display: table-cell;
+    }
+    .logo-container h1 span {
+        font-weight: 900;
+    }
+
+    .navigation {
+        float: right;
+        height: 100%;
+    }
+
+    .navigation a {
+        height: 100%;
+        display: table;
+        float: left;
+        padding: 0px 20px;
+    }
+
+    .navigation a li {
+        display: table-cell;
+        height: 100%;
+        vertical-align: middle;
+        color:white;
+        font-family:'Courier New', Courier, monospace;
+        font-size: 16px;
+    }
+
+    .navigation a:last-child {
+        padding-right:0px;
+    }
+</style>
+
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+    <body>
+        <div class = "header">
+            <div class="inner-header">
+                <div class="logo-container">
+                    <h1>Data<span>Structures</span></h1>
+                </div>
+                <ul class="navigation">
+                    <a href = "index.html"><li>Home</li></a>
+                    <a href="about.html"><li>About</li></a>     
+                    <a><li>Contact</li></a>                  
+                </ul>
+            </div>
+        </div>
+    </body>
+</html>
