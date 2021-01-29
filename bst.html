@@ -1,116 +1,168 @@
+<style>
+    main {
+        height:2450px;
+        background-color: white;
+        color: black;
+        margin-left: 1.2em;
+
+        line-height: 25px;
+        
+    }
+
+    .ds-sect {   
+        font-size: 18px;
+        margin: 30px;
+        
+       
+    }
+    .code {
+        color: green;
+        width: 50%;
+        font-size: 16px;
+        font-family: monospace;
+    }
+
+    .list {
+    }
+
+
+</style>
+
 <!DOCTYPE html>
 <html>
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Bst</title>
+        <title>Binary Search Trees</title>
         <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-        <script src="my-js/first.js"></script>
+        <script src="my-js/core.js"></script>
+        <script src="footer.html"></script>
     </head>
-
     <body>
-        <div id="header"></div>
-        <div id="bst-definition">
-        <h1>Binary Search Tree</h1>
-        <h2>What are they?</h2>
+        <header>
+            <div id="header"></div>
+        </header>
         
-        <p>Binary search trees are tree structures that order their nodes. A node whose key
-            greater than the key of the node it is being compared to would belong to the <br>
-            right of the compared node, and if the key is less than the compared node's key, 
-            it would go to the left. 
-        </p>
-        </div>   
-        <img src = "https://www.gatevidyalay.com/wp-content/uploads/2018/07/Binary-Search-Tree-Example.png" 
-             alt = "image of a binary search tree"> 
-        <div id = "pros-cons">
-        <h2>Advantages</h2>
-        <p>Binary search trees have a faster average time complexity than their list counterparts.
-            Assuming a tree is balanced, operations generally take O(log n) time compared to <br>
-            lists or arrays that have a log(n) average time complexity.
-        </p>
-        <ul>
-            <li>Balanced search trees have an average search, deletion, and insertion time of O(log n)</li>
-            <li>The keys to our node are in sorted order, and can be accessed in multiple ways
-                depending on the traversal order you implement.
-            </li>
-        </ul>
 
-        <h2>Disadvantages</h2>
-        <li>The benefits of the binary search tree over structures such as linked lists and arrays 
-            are primarily assuming the tree is balanced. Unbalanced trees are similar in function<br>
-            and algorithmic cost to a linked list.
-        </li>
-        <li>Binary search trees by themselves have no mechanism to self-correct any unbalancing
-            that can occur from inserting or deleting nodes. This makes it unlikely for the tree<br>
-            to perform at its optimized time complexity after several insertion or deletions.
-        </li>
-        </div>
-        <div id = "bst-code">
-        <h2>Code implementation (Java)</h2>
-        <pre><code>
-            //This class defines basic binary search tree, and a method to add more nodes
-            //to the tree
-            public class BinaryTree&ltK extends Comparable&ltK>>{
+        <main>
+            <div class="ds-sect">
+                <h1>Binary Search Trees</h1>
+            </div>
+            <div class="ds-sect definition">
                 
-                private class Node {
-                    Node left, right; //left and right child for node
-                    K key; //data that node holds
-                    
-                    Node(K key) {
-                        this.key = key;
-                    }
-                }
+                <h2>What are they?</h2>
                 
-                Node root;
-                int height;
-                
-                public BinaryTree(Node n) {
-                    root = n;
-                    root.left=null;
-                    root.right=null;
-                    height = 0;
-                }
-                
-                //returns true if node doesn't already exist and adding was successful
-                public boolean addNode(K key) {
-                    if(root==null) {
-                        this.root = new Node(key); //if root is null, then begin list with new root
-                        return true;
-                    }
-                    
-                    return addAux(root, key);
-                }
-                
-                private boolean addAux(Node n, K key ) {
-                    if(n.key.compareTo(key)==0) {
-                        return false;  //node already exists
+                <p>Binary search trees are tree structures that order their nodes. A node whose key
+                    greater than the key of the node it is being compared to would belong to the <br>
+                    right of the compared node, and if the key is less than the compared node's key, 
+                    it would go to the left. 
+                </p>
+                <img src = "https://www.gatevidyalay.com/wp-content/uploads/2018/07/Binary-Search-Tree-Example.png" 
+                alt = "image of a binary search tree"> 
+            </div>
+            <div class="ds-sect" id="miscellaneous">
+            </div>
+            <div class = "ds-sect list">
+                <h2>The Advantages</h2>
+                <p>Binary search trees have a faster average time complexity than their list counterparts.
+                    Assuming a tree is balanced, operations generally take O(log n) time compared to <br>
+                    lists or arrays that have a log(n) average time complexity.
+                </p>
+                <ul>
+                    <li>Balanced search trees have an average search, deletion, and insertion time of O(log n)</li>
+                    <li>The keys to our node are in sorted order, and can be accessed in multiple ways
+                        depending on the traversal order you implement.
+                    </li>
+                </ul>
+            </div>
+            <div class="ds-sect list">
+                <h2>The Disadvantages</h2>
+                <li>The benefits of the binary search tree over structures such as linked lists and arrays 
+                    are primarily assuming the tree is balanced. Unbalanced trees are similar in function<br>
+                    and algorithmic cost to a linked list.
+                </li>
+                <li>Binary search trees by themselves have no mechanism to self-correct any unbalancing
+                    that can occur from inserting or deleting nodes. This makes it unlikely for the tree<br>
+                    to perform at its optimized time complexity after several insertion or deletions.
+                </li>
+            </div>
+    
+            <div class="ds-sect performance">
+
+            </div>
+
+
+            <a href="treesContinued.html">More about Trees</a>
+
+            <div class="ds-sect code">
+                <h2>Code implementation (Java)</h2>
+                <pre><code>
+                    //This class defines basic binary search tree, and a method to add more nodes
+                    //to the tree
+                    public class BinaryTree&ltK extends Comparable&ltK>>{
                         
-                    } else if(n.key.compareTo(key)&lt0) { // if current node key is less than
-                                                        //key, move right
-                        
-                        if(n.right==null) {
-                            n.right = new Node(key); //new leaf node to right of current node
-                            return true;
-                        } else {
-                            return addAux(n.right, key);
+                        private class Node {
+                            Node left, right; //left and right child for node
+                            K key; //data that node holds
+                            
+                            Node(K key) {
+                                this.key = key;
+                            }
                         }
                         
-                    } else if(n.key.compareTo(key)>0) { //if current node key is greater than
-                                                        //key, move left
-                        if(n.left==null) {
-                            n.left = new Node(key); //new node created to left of current node
-                            return true;
-                        } else {
-                            return addAux(n.left, key);
+                        Node root;
+                        int height;
+                        
+                        public BinaryTree(Node n) {
+                            root = n;
+                            root.left=null;
+                            root.right=null;
+                            height = 0;
                         }
-                    }
-                    
-                    return false;
-                }
-            } 
-        </code></pre>
-        </div>
-        
+                        
+                        //returns true if node doesn't already exist and adding was successful
+                        public boolean addNode(K key) {
+                            if(root==null) {
+                                this.root = new Node(key); //if root is null, then begin list with new root
+                                return true;
+                            }
+                            
+                            return addAux(root, key);
+                        }
+                        
+                        private boolean addAux(Node n, K key ) {
+                            if(n.key.compareTo(key)==0) {
+                                return false;  //node already exists
+                                
+                            } else if(n.key.compareTo(key)&lt0) { // if current node key is less than
+                                                                //key, move right
+                                
+                                if(n.right==null) {
+                                    n.right = new Node(key); //new leaf node to right of current node
+                                    return true;
+                                } else {
+                                    return addAux(n.right, key);
+                                }
+                                
+                            } else if(n.key.compareTo(key)>0) { //if current node key is greater than
+                                                                //key, move left
+                                if(n.left==null) {
+                                    n.left = new Node(key); //new node created to left of current node
+                                    return true;
+                                } else {
+                                    return addAux(n.left, key);
+                                }
+                            }
+                            
+                            return false;
+                        }
+                    } 
+                </code></pre>
+            </div>
+        </main>
+
+        <footer>
+            <div id="footer"></div>
+        </footer>
     </body>
-
 </html>

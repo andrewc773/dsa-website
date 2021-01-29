@@ -1,118 +1,165 @@
+<style>
+    main {
+        height:2250px;
+        background-color: white;
+        color: black;
+        margin-left: 1.2em;
+
+        line-height: 25px;
+        
+    }
+
+    .ds-sect {   
+        font-size: 18px;
+        margin: 30px;
+        
+       
+    }
+    .code {
+        color: green;
+        width: 50%;
+        font-size: 16px;
+        font-family: monospace;
+    }
+
+    .list {
+    }
+
+
+</style>
+
 <!DOCTYPE html>
-<head>
-    <title>Stacks</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-    <script src="my-js/first.js"></script>
-</head>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Stacks</title>
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+        <script src="my-js/core.js"></script>
+        <script src="footer.html"></script>
+    </head>
+    <body>
+        <header>
+            <div id="header"></div>
+        </header>
+        
 
-<body>
-    <div id="header"></div>
-    <h1>Stacks</h1>
-    <div id = "definition">
-        <h2>What are they?</h2>
-        <p>
-            Stacks are an abstract data type that orders a collection of items linearly.
-            It operates in a "last-in, first-out" (LIFO) manner. <br>
-            A good way to think about it is to imagine a standard canister for tennis balls.
-            The ball at the bottom of the canister was added first, <br> and the first one
-            to be popped out is the ball that was last inserted.
-        </p>
-        <img src = "images/stack-demo.jpg" alt = "stack img">
-        <p>Stack architecture is commonly used for holding the order of webpages you visit,
-            several backtracking algorithms,<br> and any situation where you want to retrieve
-            data in the reverse order that you put them in.
-        </p>
-    </div>
+        <main>
+            <div class="ds-sect">
+                <h1>Stacks</h1>
+            </div>
+            <div class="ds-sect definition">
+                <h2>What are they?</h2>
+                <p>
+                    Stacks are an abstract data type that orders a collection of items linearly.
+                    It operates in a "last-in, first-out" (LIFO) manner. <br>
+                    A good way to think about it is to imagine a standard canister for tennis balls.
+                    The ball at the bottom of the canister was added first, <br> and the first one
+                    to be popped out is the ball that was last inserted.
+                </p>
+                <img src = "images/stack-demo.jpg" alt = "stack img">
+                <p>Stack architecture is commonly used for holding the order of webpages you visit,
+                    several backtracking algorithms,<br> and any situation where you want to retrieve
+                    data in the reverse order that you put them in.
+                </p>
+            </div>
+            <div class="ds-sect" id="miscellaneous">
+                <div id = "operations-sec">
+                    <h2>Operations</h2>
+                    <p>Stacks have three main, distinct operations: <i>push</i>, <i>pop</i>
+                        and <i>peek</i>.</p>
+                    <h3>Push</h3>
+                    <p>Pushing something into the stack is the method to add another element to it.
+                        Recall the tennis ball canister analogy; to <i>push</i> a ball into it<br>
+                        would be to add one more to the container.
+                    </p>
+                    <h3>Pop</h3>
+                    <p>Popping something out of the stack is the operation to remove the last
+                        element added to it. Just like a tennis ball container, popping a ball<br>
+                        out is how you remove one.
+                    </p>
+                    <h3>Peek</h3>
+                    <p>Peek allows one to view the last element inserted into the stack without 
+                        removing it from the collection.
+                    </p>
+                </div>
+            </div>
+            <div class = "ds-sect list">
+                <h2>The Advantages</h2>
+                <ul>
+                    <li>Ideal if retrieval of data in reverse order of insertion is the goal</li>
+                    <li>Allows control of how memory is assigned</li>
+                    <li>Easy to maintain</li>
+                </ul>
+            </div>
+            <div class="ds-sect list">
+                <h2>The Disadvantages</h2>
+                <ul>
+                    <li>Random access is not a feature of the data stucture</li>
+                    <li>Too many objects can lead to a stack overflow</li>
+                    <li>Can run out of memory very fast</li>
+                </ul>
+            </div>
+    
+            <div class="ds-sect performance">
+            </div>
+            <div class="ds-sect code">
+                <h2>Code Implementation (Java)</h2>
 
-
-    <div id = "operations-sec">
-        <h2>Operations</h2>
-        <p>Stacks have three main, distinct operations: <i>push</i>, <i>pop</i>
-            and <i>peek</i>.</p>
-        <h3>Push</h3>
-        <p>Pushing something into the stack is the method to add another element to it.
-            Recall the tennis ball canister analogy; to <i>push</i> a ball into it<br>
-            would be to add one more to the container.
-        </p>
-        <h3>Pop</h3>
-        <p>Popping something out of the stack is the operation to remove the last
-            element added to it. Just like a tennis ball container, popping a ball<br>
-            out is how you remove one.
-        </p>
-        <h3>Peek</h3>
-        <p>Peek allows one to view the last element inserted into the stack without 
-            removing it from the collection.
-        </p>
-    </div>
-
-    <div id = "pros-cons">
-        <h2>The Advantages</h2>
-        <ul>
-            <li>Ideal if retrieval of data in reverse order of insertion is the goal</li>
-            <li>Allows control of how memory is assigned</li>
-            <li>Easy to maintain</li>
-        </ul>
-    <h2>The Disadvantages</h2>
-        <ul>
-            <li>Random access is not a feature of the data stucture</li>
-            <li>Too many objects can lead to a stack overflow</li>
-            <li>Can run out of memory very fast</li>
-        </ul>
-    </div>
-
-    <div id = "code-section">
-        <h2>Code Implementation (Java)</h2>
-
-        <pre><code>public class Stack<T> {
-	
-            //Inner Node class
-            private class Node {
-                T data;
-                Node prev;
-                
-                Node(T data) {
-                    this.data = data;
-                }
-            }
+                <pre><code>public class Stack<T> {
             
-            //Stack attributes
-            Node last_in;
-            int size;
-            
-            //constructor
-            public Stack(T data) {
-                last_in = new Node(data);
-                size = 1;
-            }
-            
-            public void push(T data) {
-                //create new node
-                Node n = new Node(data);
-                
-                //new node's previous is current last-in
-                n.prev = last_in;
-                size++;
-                
-                //last-in points to new node being inserted
-                last_in = n;
-            }
-            
-            public T pop() {
-                //capture last-in node
-                Node n = last_in;
-                
-                //last-in now points to previous node
-                last_in = n.prev;
-                size--;
-                
-                return n.data;
-            }
-            
-            public T peek() {
-                return last_in.data;
-            }
-        }</code></pre>
-    </div>
-</body>
+                    //Inner Node class
+                    private class Node {
+                        T data;
+                        Node prev;
+                        
+                        Node(T data) {
+                            this.data = data;
+                        }
+                    }
+                    
+                    //Stack attributes
+                    Node last_in;
+                    int size;
+                    
+                    //constructor
+                    public Stack(T data) {
+                        last_in = new Node(data);
+                        size = 1;
+                    }
+                    
+                    public void push(T data) {
+                        //create new node
+                        Node n = new Node(data);
+                        
+                        //new node's previous is current last-in
+                        n.prev = last_in;
+                        size++;
+                        
+                        //last-in points to new node being inserted
+                        last_in = n;
+                    }
+                    
+                    public T pop() {
+                        //capture last-in node
+                        Node n = last_in;
+                        
+                        //last-in now points to previous node
+                        last_in = n.prev;
+                        size--;
+                        
+                        return n.data;
+                    }
+                    
+                    public T peek() {
+                        return last_in.data;
+                    }
+                }</code></pre>
+            </div>
+        </main>
+
+        <footer>
+            <div id="footer"></div>
+        </footer>
+    </body>
+</html>

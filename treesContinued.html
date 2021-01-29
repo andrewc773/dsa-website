@@ -1,124 +1,177 @@
+<style>
+    main {
+        height:3500px;
+        background-color: white;
+        color: black;
+        margin-left: 1.2em;
+
+        line-height: 25px;
+        
+    }
+
+    .ds-sect {   
+        font-size: 18px;
+        margin: 30px;
+        
+       
+    }
+    .code {
+        color: green;
+        width: 50%;
+        font-size: 16px;
+        font-family: monospace;
+    }
+
+    .list {
+    }
+
+
+</style>
+
 <!DOCTYPE html>
 <html>
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-        <title>Trees Continued</title>
+        <title>More about Trees</title>
         <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-        <script src="my-js/first.js"></script>
+        <script src="my-js/core.js"></script>
+        <script src="footer.html"></script>
     </head>
     <body>
-        <div id = "header"></div>
-        <h1>More about Trees</h1>
-        <div id ="traversal-div">
-            <h2>Traversals</h2>
-            <p>
-                Sometimes, you will want to traverse and visit every node in the tree. 
-                This will take O(n) time.<br> 
-                Trees can be traversed through four different orders:<br>
-                Level-Order, In-Order, Pre-Order, Post-Order
-            </p>
-            <div id = "Level-Order">
-            <h3>Level-Order Pseudocode</h3>
-                <ul>
-                    <li>Begin a queue with the root node</li>
-                    <li>Enqueue its children from left to right</li>
-                    <li>Dequeue the next node in line and process it</li>
-                    <li>Repeat until no nodes remain in queue</li>
-                </ul>
-            </div>
-            <div id = "In-Order">
-                <h3>In-Order Pseudocode</h3>
-                    <ul>
-                        <li>Recursively visit left</li>
-                        <li>Visit and Process node</li>
-                        <li>Recursively visit right</li>
-                    </ul>
-            </div>
-            <div id = "Pre-Order">
-                <h3>Pre-Order Pseudocode</h3>
-                    <ul>
-                        <li>Visit and Process node</li>
-                        <li>Recursively visit left</li>
-                        <li>Recursively visit right</li>
-                    </ul>
-            </div>
-            <div id = "Post-Order">
-                <h3>Post-Order Pseudocode</h3>
-                    <ul>
-                        <li>Recursively visit left</li>
-                        <li>Recursively visit right</li>
-                        <li>Visit and process node</li>
-                    </ul>
-            </div>
-
-            <div id = "traversal-example">
-                <h3>Traversal Example</h3>
-                <img src = "btExample.jpg">
-                <p>Level-Order: 25, 53, 32, 20, 16, 7, 66<br>
-                In-Order: 20, 53, 16, 25, 7, 32, 66<br>
-                Pre-Order: 25, 53, 20, 16, 32, 7, 66<br>
-                Post-Order: 20, 16, 53, 7, 66, 32, 25</p>
-            </div>
-
-        </div>
+        <header>
+            <div id="header"></div>
+        </header>
         
-        <div id = "rotation-div">
-            <h2>Rotations</h2>
-            <p>The purpose of rotations is to keep a tree balanced. We will explore
-            4 different kinds of rotations: right, left, right-left, and left-right.</p>
-            <p>Imbalances occur when nodes are inserted and deleted from the tree.
-                We will treat the node that tips the balance as the child node.<br>
-                Rotations alter the positioning of the child, parent, and grandparent nodes.
 
-            </p>
-
-            <div id = "imbalance-img">
-                <img src = "\images\balanced-imbalance examples.jpg" alt = "balanced-imbalance examples img"
-                width = 800 height = 550>
-                <figcaption>Here are some examples of balanced and imbalanced trees.</figcaption>
+        <main>
+            <div class="ds-sect">
+                <h1>More about Trees</h1>
             </div>
-
-            <div id = "rotation-explanation">
-                <h2>Rotations Explained</h2>
-                <div id = "right-rotation">
-                    <h3>Right Rotation</h3>
-                    <img src = "\images\right-rotate img.jpg" alt = "right-rotation image">
-
-                    <p>When a tree is imbalanced on its left child, left subtree, we can perform a right-rotation by<br>
-                        making the grandparent node the right child of the parent node. 
-                    </p>
-                </div>
-                <div id = "left-rotation">
-                    <h3>Left Rotation</h3>
-                    <img src = "\images\left-rotate img.jpg" alt = "left-rotation image">
-                    <p>When a tree is imbalanced on its right child, right subtree, we perform a left-rotation by <br>
-                      making the grandparent node the left child of the parent node.</p>
-                </div>
-
-                <h3>Complex rotations</h3>
-                <p>Often, a rotation won't be so simple as changing the pointers of the parent and grandparent nodes<br>
-                   We can perform different rotations when the imbalance is less obvious. Rotations sometimes must be <br>
-                   chained to ensure that the final product is a optimally balanced tree.
-                </p>
-                <h3>Right-Left Rotation</h3>
-                <img src = "\images\right-left img.jpg" alt = "right-left rotation">
-                <p>Here the tree is imbalanced on the grandparent's right child, left subtree. We rotate<br>
-                by first making the leaf node the new child of the grandparent, and the leaf's right child the former<br>
-                parent. This creates a structure for a trivial left rotation.
-                </p>
-                <h3>Left-Right Rotation</h3>
-                <img src = "images/left-right img.jpg" alt = "left-right rotation">
-                <p>In this example the tree is imbalanced on the grandparent's left child, right subtree. We rotate<br>
-                    by first making the leaf node the new child of the grandparent, and the leaf's left child the former<br>
-                    parent. This creates a structure for a trivial right rotation.
-                </p>
+            <div class="ds-sect">
                 
+                <h2>Traversals</h2>
+                <p>
+                    Sometimes, you will want to traverse and visit every node in the tree. 
+                    This will take O(n) time.<br> 
+                    Trees can be traversed through four different orders:<br>
+                    Level-Order, In-Order, Pre-Order, Post-Order
+                </p>
             </div>
-        </div>
+            <div class="ds-sect">
+                <div id ="traversal-div">
 
+                    <div id = "Level-Order">
+                    <h3>Level-Order Pseudocode</h3>
+                        <ul>
+                            <li>Begin a queue with the root node</li>
+                            <li>Enqueue its children from left to right</li>
+                            <li>Dequeue the next node in line and process it</li>
+                            <li>Repeat until no nodes remain in queue</li>
+                        </ul>
+                    </div>
+                    <div id = "In-Order">
+                        <h3>In-Order Pseudocode</h3>
+                            <ul>
+                                <li>Recursively visit left</li>
+                                <li>Visit and Process node</li>
+                                <li>Recursively visit right</li>
+                            </ul>
+                    </div>
+                    <div id = "Pre-Order">
+                        <h3>Pre-Order Pseudocode</h3>
+                            <ul>
+                                <li>Visit and Process node</li>
+                                <li>Recursively visit left</li>
+                                <li>Recursively visit right</li>
+                            </ul>
+                    </div>
+                    <div id = "Post-Order">
+                        <h3>Post-Order Pseudocode</h3>
+                            <ul>
+                                <li>Recursively visit left</li>
+                                <li>Recursively visit right</li>
+                                <li>Visit and process node</li>
+                            </ul>
+                    </div>
+                    <div id = "traversal-example">
+                        <h3>Traversal Example</h3>
+                        <img src = "btExample.jpg">
+                        <p>Level-Order: 25, 53, 32, 20, 16, 7, 66<br>
+                        In-Order: 20, 53, 16, 25, 7, 32, 66<br>
+                        Pre-Order: 25, 53, 20, 16, 32, 7, 66<br>
+                        Post-Order: 20, 16, 53, 7, 66, 32, 25</p>
+                    </div>
+            </div>
+            <div class = "ds-sect">
+                <h2>Rotations</h2>
+                <p>The purpose of rotations is to keep a tree balanced. We will explore
+                4 different kinds of rotations: right, left, right-left, and left-right.</p>
+                <p>Imbalances occur when nodes are inserted and deleted from the tree.
+                    We will treat the node that tips the balance as the child node.<br>
+                    Rotations alter the positioning of the child, parent, and grandparent nodes.
+    
+                </p>
+            </div>
+            <div class="ds-sect">
+                <div id = "rotation-div">
+
+
+                    <div id = "imbalance-img">
+                        <img src = "\images\balanced-imbalance examples.jpg" alt = "balanced-imbalance examples img"
+                        width = 800 height = 550>
+                        <figcaption>Here are some examples of balanced and imbalanced trees.</figcaption>
+                    </div>
+        
+                    <div id = "rotation-explanation">
+                        <h2>Rotations Explained</h2>
+                        <div id = "right-rotation">
+                            <h3>Right Rotation</h3>
+                            <img src = "\images\right-rotate img.jpg" alt = "right-rotation image">
+        
+                            <p>When a tree is imbalanced on its left child, left subtree, we can perform a right-rotation by<br>
+                                making the grandparent node the right child of the parent node. 
+                            </p>
+                        </div>
+                        <div id = "left-rotation">
+                            <h3>Left Rotation</h3>
+                            <img src = "\images\left-rotate img.jpg" alt = "left-rotation image">
+                            <p>When a tree is imbalanced on its right child, right subtree, we perform a left-rotation by <br>
+                              making the grandparent node the left child of the parent node.</p>
+                        </div>
+        
+                        <h3>Complex rotations</h3>
+                        <p>Often, a rotation won't be so simple as changing the pointers of the parent and grandparent nodes<br>
+                           We can perform different rotations when the imbalance is less obvious. Rotations sometimes must be <br>
+                           chained to ensure that the final product is a optimally balanced tree.
+                        </p>
+                        <h3>Right-Left Rotation</h3>
+                        <img src = "\images\right-left img.jpg" alt = "right-left rotation">
+                        <p>Here the tree is imbalanced on the grandparent's right child, left subtree. We rotate<br>
+                        by first making the leaf node the new child of the grandparent, and the leaf's right child the former<br>
+                        parent. This creates a structure for a trivial left rotation.
+                        </p>
+                        <h3>Left-Right Rotation</h3>
+                        <img src = "images/left-right img.jpg" alt = "left-right rotation">
+                        <p>In this example the tree is imbalanced on the grandparent's left child, right subtree. We rotate<br>
+                            by first making the leaf node the new child of the grandparent, and the leaf's left child the former<br>
+                            parent. This creates a structure for a trivial right rotation.
+                        </p>
+                        
+                    </div>
+
+            </div>
+    
+            <div class="ds-sect performance">
+
+            </div>
+
+            <div class="ds-sect code">
+            </div>
+        </main>
+
+        <footer>
+            <div id="footer"></div>
+        </footer>
     </body>
-
-
 </html>

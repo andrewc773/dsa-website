@@ -5,13 +5,14 @@
         text-decoration: none;
         list-style: none;
     }
+
     .header {
-        background-color: black;
+        background-color: #242323;
         height : 80px;
         width : 100%;
     }
     .inner-header {
-        background-color:black;
+        background-color:#242323;
         height : 100%;
         width: 1000px;
         display: block;
@@ -60,6 +61,13 @@
     .navigation a:last-child {
         padding-right:0px;
     }
+
+    .header-link:hover {
+        margin-top: 10px;
+        transition: all .3s;
+    }
+
+
 </style>
 
 <!DOCTYPE html>
@@ -74,11 +82,12 @@
                     <h1>Data<span>Structures</span></h1>
                 </div>
                 <ul class="navigation">
-                    <a href = "index.html"><li>Home</li></a>
-                    <a href="about.html"><li>About</li></a>     
-                    <a><li>Contact</li></a>                  
+                    <a class="header-link" href = "index.html"><li>Home</li></a>
+                    <a class="header-link" href="about.html"><li>About</li></a>     
+                    <a class="header-link" href="index.html#footer"><li>Contact</li></a>                  
                 </ul>
             </div>
         </div>
+
     </body>
 </html>

@@ -1,18 +1,54 @@
+<style>
+    main {
+        height:2325px;
+        background-color: white;
+        color: black;
+        margin-left: 1.2em;
+
+        line-height: 25px;
+        
+    }
+
+    .ds-sect {   
+        font-size: 18px;
+        margin: 30px;
+        
+       
+    }
+    .code {
+        color: green;
+        width: 50%;
+        font-size: 16px;
+        font-family: monospace;
+    }
+
+    .list {
+    }
+
+
+</style>
+
 <!DOCTYPE html>
 <html>
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-        <title>trees</title>
+        <title>Trees</title>
         <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-        <script src="my-js/first.js"></script>
+        <script src="my-js/core.js"></script>
+        <script src="footer.html"></script>
     </head>
-
     <body>
-        <div id = "header"></div>
-        <h1>Binary Trees in the abstract</h1>
-        <div id = "definition-div">
+        <header>
+            <div id="header"></div>
+        </header>
+        
+
+        <main>
+            <div class="ds-sect">
+                <h1>Trees</h1>
+            </div>
+            <div class="ds-sect definition">
                 <h2>What are they?</h2>
                 <p>In computer science, a binary digit is the smallest unit of data for 
                     computing. Binary means that there are only two options: 0 or 1,<br>
@@ -25,52 +61,61 @@
                     but as we will see in later tree-structures, order is very important<br>
                     to have a structure that can retrieve and store data efficiently.
                 </p>
-        </div>
-            <div id = "features-div">
-                <img src = "https://res.cloudinary.com/practicaldev/image/fetch/s--od-naD9n--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://miro.medium.com/max/975/1%2APWJiwTxRdQy8A_Y0hAv5Eg.png" 
-                    width = 700 height = 400 alt = "diagram of binary tree">
-                <h2>Features of the tree</h2>
-                <p>
-                    Each tree consists of nodes that represent a part of that tree. Nodes that have other nodes 
-                    stemming from them are known as parents,<br> and their
-                    descendant nodes are called child nodes. Nodes who have no children are known as leaf nodes. 
-                    The node that begins the tree,<br> where all other trees
-                    ultimately derive from, is the root node.
-                </p>
-                <p>
-                    Any subspace of the tree is known as the subtree. The height of the tree is the number of edges 
-                    from the root to the deepest node down the tree.<br>
-                    tree with only the root has a height of zero. The diagram above demonstrates these features.
-                </p>
             </div>
-            <div id = "types-div">
-            <h2>Types of trees</h2>
-                <div id = "balance-type-div">
-                    <h3>Balanced Tree</h3>
-                    <p>For a tree to function as a structure with optimal algorithmic cost, 
-                    it must be balanced. Balanced trees have an even distribution of<br>
-                    across the left and right sides. Below is a demonstration of a balanced binary search 
-                    tree performing at an optimized cost. We will explore how to balance a tree in <br>
-                    future implementations of trees.
+            <div class="miscellaneous">
+                <div id = "features-div">
+                    <img src = "https://res.cloudinary.com/practicaldev/image/fetch/s--od-naD9n--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://miro.medium.com/max/975/1%2APWJiwTxRdQy8A_Y0hAv5Eg.png" 
+                        width = 700 height = 400 alt = "diagram of binary tree">
+                    <h2>Features of the tree</h2>
+                    <p>
+                        Each tree consists of nodes that represent a part of that tree. Nodes that have other nodes 
+                        stemming from them are known as parents,<br> and their
+                        descendant nodes are called child nodes. Nodes who have no children are known as leaf nodes. 
+                        The node that begins the tree,<br> where all other trees
+                        ultimately derive from, is the root node.
                     </p>
-                    <img src = "https://blog.penjee.com/wp-content/uploads/2015/11/binary-search-tree-sorted-array-animation.gif"
-                    alt = "gif of balanced tree">
-                </div>
-                <div id = "complete-type-div">
-                    <h3>Complete Tree</h3>
-                    <p>Complete trees are trees whose levels are all filled at the maximum 
-                        capacity with two children. The only parent nodes with less than two children should<br>
-                        be the last level, and the child nodes must be aligned to the left.
+                    <p>
+                        Any subspace of the tree is known as the subtree. The height of the tree is the number of edges 
+                        from the root to the deepest node down the tree.<br>
+                        tree with only the root has a height of zero. The diagram above demonstrates these features.
                     </p>
                 </div>
-                <div id = "full-type-div">
-                    <h3>Full Tree</h3>
-                    <p>Full trees are trees with all nodes having zero or two children.
-                    </p>
+                <div id = "types-div">
+                <h2>Types of trees</h2>
+                    <div id = "balance-type-div">
+                        <h3>Balanced Tree</h3>
+                        <p>For a tree to function as a structure with optimal algorithmic cost, 
+                        it must be balanced. Balanced trees have an even distribution of<br>
+                        across the left and right sides. Below is a demonstration of a balanced binary search 
+                        tree performing at an optimized cost. We will explore how to balance a tree in <br>
+                        future implementations of trees.
+                        </p>
+                        <img src = "https://blog.penjee.com/wp-content/uploads/2015/11/binary-search-tree-sorted-array-animation.gif"
+                        alt = "gif of balanced tree">
+                    </div>
+                    <div id = "complete-type-div">
+                        <h3>Complete Tree</h3>
+                        <p>Complete trees are trees whose levels are all filled at the maximum 
+                            capacity with two children. The only parent nodes with less than two children should<br>
+                            be the last level, and the child nodes must be aligned to the left.
+                        </p>
+                    </div>
+                    <div id = "full-type-div">
+                        <h3>Full Tree</h3>
+                        <p>Full trees are trees with all nodes having zero or two children.
+                        </p>
+                    </div>
+                    <img src= "https://i.stack.imgur.com/NFwIW.png" alt = "image of binary tree types">
                 </div>
-                <img src= "https://i.stack.imgur.com/NFwIW.png" alt = "image of binary tree types">
             </div>
-            <div id = "performance-div">
+            <div class = "ds-sect list">
+
+            </div>
+            <div class="ds-sect list">
+
+            </div>
+    
+            <div class="ds-sect performance">
                 <h2>Performance</h2>
                 <p>
                     In optimal conditions, when a tree is balanced, search, insertion, and deletion
@@ -87,16 +132,17 @@
                 </p>
             </div>
             <img src = "http://www.cs.kent.edu/~durand/CS2/Notes/10_Binary_Trees/ds_tre9.gif"
-                alt = "img of degenerate and balanced tree">
+            alt = "img of degenerate and balanced tree">
             <figcaption>An example of a balanced tree (left), and a degenerate tree (right).</figcaption>
 
-            
-            
+            <a href="treesContinued.html">More about Trees</a>
 
+            <div class="ds-sect code">
+            </div>
+        </main>
 
-        </div>
-
-        <a href="treesContinued.html">More about Trees</a>
-
+        <footer>
+            <div id="footer"></div>
+        </footer>
     </body>
 </html>

@@ -1,0 +1,201 @@
+<style>
+
+@import url(https://fonts.googleapis.com/css?family=Montserrat);
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+
+
+html,body {
+        height: 100%;
+        padding: 0px;
+        margin: 0px;
+        font-family:  'Open Sans';
+        font-size: 16px;
+
+    }
+
+    .btn {
+        padding: .5rem 1rem;
+        color: white;
+        background-color: #0059ff;
+        border: 1px solid transparent;
+        
+    }
+
+    .btn-big {
+        padding: .7rem 1.3rem;
+        line-height: 1.3rem;
+    }
+
+
+        /*Styling for footer*/
+    .footer {
+        
+        background: #242323;
+        color: #d3d3d3;
+        min-height: 350px;
+        width: 100%;
+        position: relative;
+       
+
+    }
+
+    .footer .footer-content {
+
+        display: grid;
+
+        grid-template-columns: 300px 300px 300px;
+        column-gap: 200px;
+        
+        justify-content: center;
+        
+        height: 250px;
+    }
+
+    /*About section*/
+    .footer-content .footer-about {
+        margin-top: 15px;
+        display: flex;
+        flex-direction: column;
+        
+    }
+
+    .footer-content .footer-about span {
+        display: block;
+
+        font-size: 1.1em;
+
+        padding-top: 10px;
+
+    }
+    /*Links section*/
+    .footer-content .footer-links {
+        margin-top: 15px;
+        /*background-color: #303036;*/
+        display: grid;
+        justify-content: center;
+    }
+
+    .footer-content .footer-links ul a{
+        display: block;
+        color: lightgray;
+        font-family: 'Montserrat';
+        font-size: 12px;
+        margin: 7px;;
+        transition: all .3s;
+    }
+
+    .footer-content .footer-links ul a:hover {
+        color: white;
+        margin-left: 15px;
+        transition: all .3s;
+    }
+
+    .footer-content h3 {
+        font-family: 'Arial Narrow Bold', sans-serif;
+        font-weight: 700;
+        color: white;
+        font-size: ;
+    }
+
+    /*Contact Us section*/
+
+    .footer-content .footer-contact {
+        background-color: blue;
+        margin-top: 15px;
+        display: grid;
+    }
+
+    .footer .footer-bottom {
+        background-color: #080808;
+        /*background-color: #343a40;*/
+        color:#686868;
+        text-align: center;
+        height: 50px;
+        position: absolute;
+        width: 100%;
+        padding-top: 20px;
+        bottom: 0px;
+    }
+
+    .footer .footer-content .contact-form {
+        margin-top: 15px;
+        
+    }
+
+    .footer .footer-content .contact-form .contact-input {
+        background-color: #272727;
+        color:#bebdbd;
+        margin-bottom: 10px;
+        line-height: 1.5rem;
+        padding: .7rem 1.2rem;
+        border: none;
+        width: 100%;
+    }
+
+    .footer .footer-content .contact-form .contact-input:focus {
+        background-color: #1a1a1a;
+    }
+</style>
+
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+    <body>
+        
+    <!--Footer-->
+    <div id = "footer" class="footer">
+
+        <div class="footer-content">
+            <div class="footer-about">
+                <div id="title">
+                    <h3>About Us</h3>
+                </div>
+                <p>DataStructures is a website 
+                        dedicated to teaching
+                        data structures that computer scientists deal 
+                        with daily. The content can benefit
+                        anyone: from job seeker, to computer nerd.
+                </p>
+                <div class="contact-info">
+                    <span><img src="images/phone-alt-solid.svg" height="20px" width="20px"></i> &nbsp; 301-825-6632</span>
+                    <span><img src="images/envelope-open-text-solid.svg" height="20px" width="20px"></i> &nbsp; andrew.chavarria77@gmail.com</span>
+                </div>
+
+            </div>
+            <div class="footer-links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <a href="arrays.html"><li>Arrays</li></a>
+                    <a href="linkedList.html"><li>Linked Lists</li></a>
+                    <a href="stacks.html"><li>Stacks</li></a>
+                    <a href="queues.html"><li>Queues</li></a>
+                    <a href="hashtable.html"><li>Hashtables</li></a>
+                    <a href = "trees.html"><li>Trees</li></a>
+                    <a href="bst.html"><li>Binary Search Tree</li></a>
+                    <a href = "heap.html"><li>Heaps</li></a>
+                    <a href = "rbTree.html"><li>Red-Black Trees</li></a>
+                    <a href="avl.html"><li>AVL Trees</li></a>
+                </ul>
+            </div>
+
+            <div class="footer-section contact-form">
+                <h3>Contact Us</h3>
+                <br>
+                <form action="index.html" method="post">
+                    <input type="email" name="email" class="text-input contact-input" placeholder="Your email address...">
+                    <textarea name="message" class="text-input contact-input" placeholder="Your message..."></textarea>
+                    <button type="submit" class="btn btn-big"><img src= "images/envelope-open-text-solid.svg" height="22px" width="22px">  Submit</button>
+                </form>
+
+            </div>
+        </div>
+        <div class = "footer-bottom">
+            &copy; DataStructures | Designed by Andrew Chavarria
+        </div>
+
+    </div>
+    <!--Footer-->
+    </body>
+</html>

@@ -1,8 +1,12 @@
 <style>
-    h3 {
+    body {
+        background-color: white;
         
     }
 
+    #main-body {
+        margin-bottom: 50px;
+    }
 
     header {
         display: flex;
@@ -16,23 +20,54 @@
     #ds-list {
         display: grid;
 
-        grid-template-columns: 300px 300px 300px 300px 300px;
-        column-gap: 10px;
-        row-gap: 10px;
+        grid-template-columns: 200px 200px 200px 200px 200px;
+        column-gap: 15px;
+        row-gap: 25px;
 
         justify-items: center;
 
     }
 
-    #title-of-list {
-        font-size: 20px;
-        font-family: 'Courier New', Courier, monospace;
-        padding: 20px;
+    #list-header {
+
+        margin-top: 20px;
+        
+        /*background-color: #242323;*/
+        width: 60%;
+        height: 60px;
+
+        display: flex;
+
+        justify-content: center;
+
+    }
+
+    #list-title {
+        color: black;
+        font-size: 30px;
+    }
+
+    .ds-btn {
+        position: relative;
+        top: 0;
+        transition: top ease 0.3s;
+    }
+
+    .ds-btn:hover {
+        top: -15px;
+        
     }
 
     #main-body {
         display: grid;
         justify-items: center;
+    }
+
+    /*Media Queries*/
+    @media(max-width: 375px) {
+        #ds-list {
+            width: 40vw;
+        }
     }
 </style>
 <!DOCTYPE html>
@@ -42,62 +77,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Data Structures and Algorithms</title>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-    <script src="my-js/first.js"></script>
+    <script src="my-js/core.js"></script>
+    <script src="my-js/index.js"></script>
+    <script src="footer.html"></script>
+    
 </head>
 <body>
     <div id = "header"></div>
     <div id="main-body">
-        <div id="title-of-list"><h3>Common Structures</h3></div>
+        <div id="list-header">
+            <h3 id="list-title">Common Structures</h3> 
+        </div>
         <div id="ds-list">
-            <input id="array-btn" type="image" src="images/array btn.jpeg" width="275" height="275">
-            <input id="linkedlist-btn"  type="image" src="images/linked list btn.jpeg" width="275" height="275">
-            <input  id="stack-btn" type="image" src="images/stack button.jpeg" width="275" height="275">
-            <input  id="queue-btn" type="image" src="images/queue btn.jpeg" width="275" height="275">
-            <input  id="htable-btn" type="image" src="images/hash table btn.jpeg" width="275" height="275">
-            <input  id="tree-btn" type="image" src="images/tree btn.jpeg" width="275" height="275">
-            <input  id="bst-btn" type="image" src="images/bst button.jpeg" width="275" height="275">
-            <input  id="heap-btn" type="image" src="images/heap tree.jpeg" width="275" height="275">
-            <input  id="rbtree-btn" type="image" src="images/rb tree btn.jpeg" width="275" height="275">
-            <input  id="avl-btn" type="image" src="images/avl trees.jpeg" width="275" height="275">
+            <input class = "ds-btn"id="array-btn" type="image" src="images/array btn (2).png" width="200" height="200">
+            <input class = "ds-btn" id="linkedlist-btn"  type="image" src="images/linked list btn.png" width="200" height="200">
+            <input class = "ds-btn" id="stack-btn" type="image" src="images/stack btn (1).png" width="200" height="200">
+            <input class = "ds-btn" id="queue-btn" type="image" src="images/queue btn (2).png" width="200" height="200">
+            <input class = "ds-btn" id="htable-btn" type="image" src="images/hash table btn (1).png" width="200" height="200">
+            <input class = "ds-btn" id="tree-btn" type="image" src="images/trees btn (1).png" width="200" height="200">
+            <input class = "ds-btn" id="bst-btn" type="image" src="images/bst btn.png" width="200" height="200">
+            <input class = "ds-btn" id="heap-btn" type="image" src="images/heap btn.png" width="200" height="200">
+            <input class = "ds-btn" id="rbtree-btn" type="image" src="images/rb tree btn.png" width="200" height="200">
+            <input class = "ds-btn" id="avl-btn" type="image" src="images/avl btn.png" width="200" height="200">
         </div>
     </div>
 
-
-
-
-    <!----
-                <div id = "main-body">
-            
-            <div id="title-of-list"><h3>Common Structures</h3></div>
-            
-
-            <div id="ds-list">
-                    <input type="image" src="images/array btn.jpeg" width="300" height="300">
-                    <button class = "ds-button"><a href= "linkedList.html">Linked Lists</a></button>
-                    <button class = "ds-button"><a href = "stacks.html">Stacks</a></button>
-                    <button class = "ds-button"><a href = "queues.html">Queues</a></button>
-                    <button class = "ds-button"><a href = "hashtable.html">Hash Table</a></button>
-                    <button class = "ds-button"><a href= "trees.html">Trees</a></button>
-                    <button class = "ds-button"><a href="bst.html">Binary Search Tree</a></button>
-                    <button class = "ds-button"><a href="rbTree.html">Red-Black Tree</a></button>   
-                    <button class = "ds-button"><a href = "avl.html">AVL Tree</a></button>
-                    <button class = "ds-button"><a href = "heap.html">Heap</a></button>
-            </div>
-
-        </div>
-
-        #ds-list {
-        display: grid;
-        grid-template-columns: 100px 100px 100px 100px 100px;
-        column-gap: 10px;
-        row-gap: 10px;
-
-    }
+    <div id="footer">
         
-        ><!-->
-
-    
+    </div>
 
 </body>
+
 
 </html>

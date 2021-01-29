@@ -1,6 +1,6 @@
-$(document).ready(function() {
-    $("#header").load("header.html")
+//This file is code for index.html file
 
+$(document).ready(function() {
 
     //Creating hyperlinks for all the buttons
     $("#array-btn").click(function(){

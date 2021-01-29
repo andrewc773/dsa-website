@@ -1,42 +1,79 @@
+<style>
+    main {
+        height:2050px;
+        background-color: white;
+        color: black;
+        margin-left: 1.2em;
+
+        line-height: 25px;
+        
+    }
+
+    .ds-sect {   
+        font-size: 18px;
+        margin: 30px;
+        
+       
+    }
+    .code {
+        color: green;
+        width: 50%;
+        font-size: 16px;
+        font-family: monospace;
+    }
+
+    .list {
+    }
+
+
+</style>
+
 <!DOCTYPE html>
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Red Black Trees</title>
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+        <script src="my-js/core.js"></script>
+        <script src="footer.html"></script>
+    </head>
+    <body>
+        <header>
+            <div id="header"></div>
+        </header>
+        
 
-    <title>Red-Black Trees</title>
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-    <script src="my-js/first.js"></script>
-</head>
-<body>
-    <div id = "header"></div>
-    <h1>Red-Black Trees</h1>
-    
-    <div id = "defintion-div">
-        <h2>What are they?</h2>
-        <p>
-            Red-Black trees are a special kind of self-balancing tree. The nodes
-            contain an extra bit of information- their color: red or black. <br>
-            In order to remain balanced, the tree has several rules it follows to
-            maintain itself, which it decides based on the color of the nodes.
-        </p>
-
-        <h3>The Rules</h3>
-        <ol id = "rb-tree-rules">
-            <li>The root must be black</li>
-            <li>Children of red nodes are black</li>
-            <li>All external nodes share the same black depth</li>
-            <li>New nodes being inserted are always initially red</li>
-            <li>No path can have two or more consecutive red nodes</li>
-            <li>Null nodes are always considered black</li>
-        </ol>
-    </div>
-    <div id = "rb-tree-img">
-        <img src = "https://algorithmtutor.com/images/RBTreeExample.png"
-        alt = "Red-Black tree example">
-        <figcaption>Red-Black Tree example</figcaption>
-    </div>
-    
-
+        <main>
+            <div class="ds-sect">
+                <h1>Red-Black Trees</h1>
+            </div>
+            <div class="ds-sect definition">
+                <h2>What are they?</h2>
+                <p>
+                    Red-Black trees are a special kind of self-balancing tree. The nodes
+                    contain an extra bit of information- their color: red or black. <br>
+                    In order to remain balanced, the tree has several rules it follows to
+                    maintain itself, which it decides based on the color of the nodes.
+                </p>
+        
+                <h3>The Rules</h3>
+                <ol id = "rb-tree-rules">
+                    <li>The root must be black</li>
+                    <li>Children of red nodes are black</li>
+                    <li>All external nodes share the same black depth</li>
+                    <li>New nodes being inserted are always initially red</li>
+                    <li>No path can have two or more consecutive red nodes</li>
+                    <li>Null nodes are always considered black</li>
+                </ol>
+                <div id = "rb-tree-img">
+                    <img src = "https://algorithmtutor.com/images/RBTreeExample.png"
+                    alt = "Red-Black tree example">
+                    <figcaption>Red-Black Tree example</figcaption>
+                </div>
+            </div>
+            <div class="ds-sect" id="miscellaneous">
+               
     <div id = "self-balancing div">
         <h2>Re-balancing</h2>
         <p>Red-Black trees self-balance by two mechanisms: color-flipping and 
@@ -57,29 +94,39 @@
         <img src = "images/Rb-rotation-ex2.jpg" alt = "rotation example 2">
         <figcaption>Left-Right Rotation Example</figcaption>
 
-    </div>
+    </div> 
+            </div>
+            <div class = "ds-sect list">
+                <h2>The Advantages</h2>
+                <ul id = advantage-list>
+                    <li>Self-rotating tree that allows for optimized peformance</li>
+                    <li>Useful when there is a lot of data being added and removed</li>
+                </ul>
+            </div>
+            <div class="ds-sect list">
+                <h2>The Disadvantages</h2>
+                <ul id = "disadvantage-list">
+                    <li>B-trees are better for indexing and storing info on a disk</li>
+                    <li>Implementation can be complicated; there are several differing
+                        operations for edge cases.
+                    </li>
+                </ul>
+            </div>
+    
+            <div class="ds-sect performance">
+                <h2>Performance</h2>
+                <p>Red-Black Trees on average perform at an O(log n) algorithmic
+                    complexity. Given that they are self-balancing, one can<br>
+                    assume they are always working at an optimized level.
+                </p>
+            </div>
 
-    <div id = "performance">
-        <h2>Performance</h2>
-        <p>Red-Black Trees on average perform at an O(log n) algorithmic
-            complexity. Given that they are self-balancing, one can<br>
-            assume they are always working at an optimized level.
-        </p>
-    </div>
+            <div class="ds-sect code">
+            </div>
+        </main>
 
-    <div id = "pros-cons">
-        <h2>Advantages</h2>
-        <ul id = advantage-list>
-            <li>Self-rotating tree that allows for optimized peformance</li>
-            <li>Useful when there is a lot of data being added and removed</li>
-        </ul>
-        <h2>Disadvantages</h2>
-        <ul id = "disadvantage-list">
-            <li>B-trees are better for indexing and storing info on a disk</li>
-            <li>Implementation can be complicated; there are several differing
-                operations for edge cases.
-            </li>
-        </ul>
-    </div>
-
-</body>
+        <footer>
+            <div id="footer"></div>
+        </footer>
+    </body>
+</html>

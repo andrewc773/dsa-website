@@ -1,214 +1,272 @@
+<style>
+    main {
+        height:5900px;
+        background-color: white;
+        color: black;
+        margin-left: 1.2em;
+
+        line-height: 25px;
+        
+    }
+
+    .ds-sect {   
+        font-size: 18px;
+        margin: 30px;
+        
+       
+    }
+    .code {
+        color: green;
+        width: 50%;
+        font-size: 16px;
+        font-family: monospace;
+    }
+
+    .list {
+    }
+
+
+</style>
+
 <!DOCTYPE html>
-<head>
-    <title>Heap</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-    <script src="my-js/first.js"></script>
-</head>
-<body>
-    <div id = "header"></div>
-    <h1>Heap</h1>
-    <h2>What is it?</h2>
-    <p>A binary heap, or priority queue, is a tree-like data structure that
-        stores the minimum (or max) value at its root. Three key properties of<br>
-        the tree are:
-        <ul>
-            <li>It is always a complete tree</li>
-            <li>The value of the root node is always the max or min value depending on the heap type</li>
-            <li>The parent node is always less than or equal to, or greater than or equal to, its children
-                (depending on heap type)
-            </li>
-        </ul> 
-    </p>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Heaps</title>
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+        <script src="my-js/core.js"></script>
+        <script src="footer.html"></script>
+    </head>
+    <body>
+        <header>
+            <div id="header"></div>
+        </header>
+        
 
-    <p>A maxheap stores the maximum value at the root node, and a min heap 
-        stores the minimum value. In this page we will discuss, explain and<br>
-        implement a <b>minheap</b>, but it is important to keep in mind that 
-        the details are quite similar for a maxheap structure.
-    </p>
-    <h2>Operations</h2>
-    <p>When elements are inserted or removed, the tree must self-correct itself
-        in order to maintain its properties. 
-    </p>
-    <h3>Insertion</h3>
-    <p>An new element is initially inserted at the end of the tree. From there,
-        it can replace its parent if the child's value is lesser (minheap).<br>
-    </p>
-    <img src = "images/minheap insert img.jpg" alt = "minheap insert img">
-    <h3>GetMin()</h3>
-    <p>
-        Removing the smallest element from the heap is done in O(1) time since 
-        it is always at the root. Following the removal, the heap follows an<br> 
-        algorithm to ensure the next smallest element is placed into the root 
-        without violating any of the heap's special properties.
-    </p>
-    <h4>GetMin() Algorithm</h4>
-    <ul>
-        <li>Save the smallest node (at root)</li>
-        <li>Replace with the node at the end of the tree</li>
-        <li>Replace the new replacement with its smallest child until it is not greater than its children</li>
-    </ul>
+        <main>
+            <div class="ds-sect">
+                <h1>Heaps</h1>
+            </div>
+            <div class="ds-sect definition">
+                
+                <h2>What is it?</h2>
+                <p>A binary heap, or priority queue, is a tree-like data structure that
+                    stores the minimum (or max) value at its root. Three key properties of<br>
+                    the tree are:
+                    <ul>
+                        <li>It is always a complete tree</li>
+                        <li>The value of the root node is always the max or min value depending on the heap type</li>
+                        <li>The parent node is always less than or equal to, or greater than or equal to, its children
+                            (depending on heap type)
+                        </li>
+                    </ul> 
+                </p>
+            
+                <p>A maxheap stores the maximum value at the root node, and a min heap 
+                    stores the minimum value. In this page we will discuss, explain and<br>
+                    implement a <b>minheap</b>, but it is important to keep in mind that 
+                    the details are quite similar for a maxheap structure.
+                </p>
+            </div>
+            <div class="ds-sect" id="miscellaneous">
+                <h2>Operations</h2>
+                <p>When elements are inserted or removed, the tree must self-correct itself
+                    in order to maintain its properties. 
+                </p>
+                <h3>Insertion</h3>
+                <p>An new element is initially inserted at the end of the tree. From there,
+                    it can replace its parent if the child's value is lesser (minheap).<br>
+                </p>
+                <img src = "images/minheap insert img.jpg" alt = "minheap insert img">
+                <h3>GetMin()</h3>
+                <p>
+                    Removing the smallest element from the heap is done in O(1) time since 
+                    it is always at the root. Following the removal, the heap follows an<br> 
+                    algorithm to ensure the next smallest element is placed into the root 
+                    without violating any of the heap's special properties.
+                </p>
+                <h4>GetMin() Algorithm</h4>
+                <ul>
+                    <li>Save the smallest node (at root)</li>
+                    <li>Replace with the node at the end of the tree</li>
+                    <li>Replace the new replacement with its smallest child until it is not greater than its children</li>
+                </ul>
+            
+                <img src = "images/minheap getMin img.jpg" alt = "minheap getMin() img">
+            </div>
+            <div class = "ds-sect list">
+                <h2>The Advantages</h2>
+                <ul>
+                    <li>Can find the smallest or largest element in a set in O(1) time</li>
+                    <li>Heaps have many applications, including being used for algorithms
+                        (such as Heapsort and Dijktra's)
+                    </li>
+                    <li>Elements are able to be added or deleted efficiently</li>
+            </div>
+            <div class="ds-sect list">
+                <h2>The Disadvantages</h2>
 
-    <img src = "images/minheap getMin img.jpg" alt = "minheap getMin() img">
-    <h2>The Advantages</h2>
-    <ul>
-        <li>Can find the smallest or largest element in a set in O(1) time</li>
-        <li>Heaps have many applications, including being used for algorithms
-            (such as Heapsort and Dijktra's)
-        </li>
-        <li>Elements are able to be added or deleted efficiently</li>
-    </ul>
-    <h2>The Disadvantages</h2>
-    <li></li>
-    <h2>Heap Array Implementation</h2>
-    <p>Heaps can be implemented using an array. As opposed to the traditional tree 
-        class style, this approach makes for simpler code.  
-    </p>
-    <img src = "images/minheap to array.jpg" alt = "array-implementation demo" height = 400>
-    <h3>Features of the array</h3>
-        <ul>
-            <li>Root (min value) is kept at index zero</li>
-            <li>The rest of the nodes are sequentially placed in the array in <b>level-order</b></li>
-            <li>The indices of a parent's children can be computed</li>
-            <li>The index of a child's parent can be computed</li>
-        </ul>
-    <h3>Code (Java)</h3>
-        <pre><code>
-            public class MinHeap {
-	
-                private int size, capacity;
-                private int[] heap;
-                
-                private static final int ROOT_INDEX = 1;
-                
-                public MinHeap(int cap) {
-                    this.size = 0;
-                    this.capacity = cap;
-                    heap = new int[capacity+1];
-                    
-                    heap[0] = Integer.MIN_VALUE; //placeholder value for the root
-                }
-                
-                public void insert(int element) {
-                    if(size==capacity) {
-                        //INCREASE CAPACITY	
-                    }
-                    
-                    heap[++size] = element;
-                    int elemIndex = size;
-                    
-                    //while new element is less than its parent...
-                    while(heap[elemIndex]< heap[getParent(elemIndex)]) {
-                        swap(elemIndex, getParent(elemIndex));
+            </div>
+    
+            <div class="ds-sect performance">
+                <h2>Heap Array Implementation</h2>
+                <p>Heaps can be implemented using an array. As opposed to the traditional tree 
+                    class style, this approach makes for simpler code.  
+                </p>
+                <img src = "images/minheap to array.jpg" alt = "array-implementation demo" height = 400>
+                <h3>Features of the array</h3>
+                    <ul>
+                        <li>Root (min value) is kept at index zero</li>
+                        <li>The rest of the nodes are sequentially placed in the array in <b>level-order</b></li>
+                        <li>The indices of a parent's children can be computed</li>
+                        <li>The index of a child's parent can be computed</li>
+                    </ul>
+            </div>
+
+            <div class="ds-sect code">
+                <h3>Code Implementation(Java)</h3>
+                <pre><code>
+                    public class MinHeap {
+            
+                        private int size, capacity;
+                        private int[] heap;
                         
-                        elemIndex = getParent(elemIndex);//get new index of the now swapped element
-                    }
-                
-                }
-                
-                public void minHeap() 
-                { 
-                    for (int pos = (size / 2); pos >= 1; pos--) { 
-                        minHeapify(pos); 
-                    } 
-                } 
-                
-                public int getMin() {
-                    //get root value
-                    int minVal = heap[ROOT_INDEX];
-                    
-                    heap[ROOT_INDEX] = heap[size--]; //new root is the end of tree node
-                    
-                    //Notice, the old value at the end of the heap still exists in array,
-                    // but it is ignored. Deprecated value and eventually replaced
-                    
-                    minHeapify(ROOT_INDEX); //recalibrate heap
-                    
-                    return minVal;
-                }
-                
-                /*
-                 * Private Helper Methods
-                 * */
-                
-                //returns parent index of child
-                private int getParent(int childIndex) {
-                    return Math.floorDiv(childIndex-1, 2);
-                }
-                
-                //returns index of left child
-                private int getLeftChild(int parentIndex) {
-                    return (parentIndex*2)+1;
-                }
-                
-                //returns index of right child
-                private int getRightChild(int parentIndex) {
-                    return (parentIndex*2)+2;
-                }
-                
-                //swaps two nodes of the tree
-                private void swap(int firstIndex, int secondIndex) {
-                    
-                    int temp = heap[firstIndex]; //holds value of firstIndex
-                    
-                    heap[firstIndex] = heap[secondIndex];
-                    heap[secondIndex] = temp;
-                }
-                
-                //returns if node at index is a leaf node
-                private boolean isLeaf(int index) {
-                    return (index >= (size / 2) && index <= size);
-                }
-                
-                //heapify-down method
-                private void minHeapify(int index) {
-                    //only heapify-down if not a leaf node 
-                    if(!isLeaf(index)) {
+                        private static final int ROOT_INDEX = 1;
                         
-                        //if node is greater than any of its children
-                        if(heap[index]>heap[getLeftChild(index)] ||
-                                heap[index]> heap[getRightChild(index)]) {
+                        public MinHeap(int cap) {
+                            this.size = 0;
+                            this.capacity = cap;
+                            heap = new int[capacity+1];
                             
-                            //start with left child 
-                            if(heap[index]> heap[getLeftChild(index)]) {
+                            heap[0] = Integer.MIN_VALUE; //placeholder value for the root
+                        }
+                        
+                        public void insert(int element) {
+                            if(size==capacity) {
+                                //INCREASE CAPACITY	
+                            }
+                            
+                            heap[++size] = element;
+                            int elemIndex = size;
+                            
+                            //while new element is less than its parent...
+                            while(heap[elemIndex]< heap[getParent(elemIndex)]) {
+                                swap(elemIndex, getParent(elemIndex));
                                 
-                                swap(index, getLeftChild(index));
+                                elemIndex = getParent(elemIndex);//get new index of the now swapped element
+                            }
+                        
+                        }
+                        
+                        public void minHeap() 
+                        { 
+                            for (int pos = (size / 2); pos >= 1; pos--) { 
+                                minHeapify(pos); 
+                            } 
+                        } 
+                        
+                        public int getMin() {
+                            //get root value
+                            int minVal = heap[ROOT_INDEX];
+                            
+                            heap[ROOT_INDEX] = heap[size--]; //new root is the end of tree node
+                            
+                            //Notice, the old value at the end of the heap still exists in array,
+                            // but it is ignored. Deprecated value and eventually replaced
+                            
+                            minHeapify(ROOT_INDEX); //recalibrate heap
+                            
+                            return minVal;
+                        }
+                        
+                        /*
+                         * Private Helper Methods
+                         * */
+                        
+                        //returns parent index of child
+                        private int getParent(int childIndex) {
+                            return Math.floorDiv(childIndex-1, 2);
+                        }
+                        
+                        //returns index of left child
+                        private int getLeftChild(int parentIndex) {
+                            return (parentIndex*2)+1;
+                        }
+                        
+                        //returns index of right child
+                        private int getRightChild(int parentIndex) {
+                            return (parentIndex*2)+2;
+                        }
+                        
+                        //swaps two nodes of the tree
+                        private void swap(int firstIndex, int secondIndex) {
+                            
+                            int temp = heap[firstIndex]; //holds value of firstIndex
+                            
+                            heap[firstIndex] = heap[secondIndex];
+                            heap[secondIndex] = temp;
+                        }
+                        
+                        //returns if node at index is a leaf node
+                        private boolean isLeaf(int index) {
+                            return (index >= (size / 2) && index <= size);
+                        }
+                        
+                        //heapify-down method
+                        private void minHeapify(int index) {
+                            //only heapify-down if not a leaf node 
+                            if(!isLeaf(index)) {
                                 
-                                //recursion- keep checking if parent > child
-                                minHeapify(getLeftChild(index));
-                            } else {
-                                //else, right child is smaller than parent
-                                swap(index, getRightChild(index));
-                                
-                                minHeapify(getRightChild(index));
+                                //if node is greater than any of its children
+                                if(heap[index]>heap[getLeftChild(index)] ||
+                                        heap[index]> heap[getRightChild(index)]) {
+                                    
+                                    //start with left child 
+                                    if(heap[index]> heap[getLeftChild(index)]) {
+                                        
+                                        swap(index, getLeftChild(index));
+                                        
+                                        //recursion- keep checking if parent > child
+                                        minHeapify(getLeftChild(index));
+                                    } else {
+                                        //else, right child is smaller than parent
+                                        swap(index, getRightChild(index));
+                                        
+                                        minHeapify(getRightChild(index));
+                                    }
+                                }
                             }
                         }
+                        
+                        public String toString() { 
+                            
+                            String output = "";
+                            
+                            for (int i = 1; i &lt= size / 2; i++) { 
+                                
+                                output+=" PARENT : " + heap[i];
+                                
+                                if(2*i &gt= size) {
+                                    output+=" LEFT CHILD : " +heap[2 * i];
+                                }
+                                
+                                if(2*i+1 &lt= size) {
+                                    output+=" RIGHT CHILD :" + heap[2 * i + 1];
+                                }
+                                
+                                output+="\n";
+                            }
+                            
+                            return output;
+                        } 
                     }
-                }
-                
-                public String toString() { 
-                    
-                    String output = "";
-                    
-                    for (int i = 1; i &lt= size / 2; i++) { 
-                        
-                        output+=" PARENT : " + heap[i];
-                        
-                        if(2*i &gt= size) {
-                            output+=" LEFT CHILD : " +heap[2 * i];
-                        }
-                        
-                        if(2*i+1 &lt= size) {
-                            output+=" RIGHT CHILD :" + heap[2 * i + 1];
-                        }
-                        
-                        output+="\n";
-                    }
-                    
-                    return output;
-                } 
-            }
-        </code></pre>
+                </code></pre>
+            </div>
+        </main>
 
-</body>
+        <footer>
+            <div id="footer"></div>
+        </footer>
+    </body>
+</html>
