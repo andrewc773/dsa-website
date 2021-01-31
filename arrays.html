@@ -1,66 +1,86 @@
 <style>
+
+    @import url(https://fonts.googleapis.com/css?family=Montserrat);
+    @import url(https://fonts.googleapis.com/css?family=Open+Sans);
+
     main {
-        height:1250px;
-        background-color: white;
-        color: black;
-        margin-left: 1.2em;
-
-        line-height: 25px;
-        
+        font-family: 'Montserrat';
     }
 
-    .ds-sect {   
-        font-size: 18px;
-        margin: 30px;
-        
-       
-    }
-    .code {
+    .ds-sect code {
         color: green;
-        width: 50%;
-        font-size: 16px;
         font-family: monospace;
     }
 
-    .list {
+    /*Classes*/
+
+    @media(min-width: 801px) {
+
+        .ds-sect, .pg-img {
+            padding-top: 30px;
+            padding-left: 30px;
+            font-size: 22px;
+        }
+
+        .ds-sect:last-child {
+            padding-bottom: 20px;
+        }
+
+        .ds-sect code{
+            font-size: 18px;
+        }
+
+
     }
 
+    @media(max-width: 800px) {
+        main {
+            background-color: white;
+        }
+
+        .ds-sect {
+            font-size: 5vw;
+            
+            padding: 20px 0px 20px 10px;
+        }
+
+        .pg-img {
+            width: 100%;
+            height: auto;
+        }
+
+        .ds-sect code {
+            font-size: 12px;
+            padding-left: 10px;
+            line-height: 20px;
+        }
+    }
 
 </style>
-
 <!DOCTYPE html>
 <html>
     <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Arrays</title>
         <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
         <script src="my-js/core.js"></script>
-        <script src="footer.html"></script>
+
     </head>
     <body>
-        <header>
-            <div id="header"></div>
-        </header>
-        
+        <header id="header"></header>
 
         <main>
-            <div class="ds-sect definition">
-                <h2>What are they?</h2>
+            <h2 class="ds-sect title">What are they?</h2>
+            <div class="ds-sect">
                 <p>An array is a collection of elements, usually of the same data type
                     (such as an integer or string), that is put together in a list-fashion.<br>
                     Each element has its own spot in the list, which can be accessed directly
                     in O(1) time if the index is known beforehand.<br>
                 </p>
-                <div id = "array-img" style="margin-right: -80px">
-                    <img src = "/images/array demo.jpeg">;
-                </div>
             </div>
-            <div class="miscellaneous">
-    
-            </div>
-            <div class = "ds-sect list">
-                <h2>The Advantages</h2>
+
+            <img class="pg-img" src="images/array demo.jpeg">
+
+            <h2 class="ds-sect title">The Advantages</h2>
+            <div class="ds-sect list">
                 <ul>
                     <li>With an array, you can access any spot in it in O(1) time. 
                         Whether you are looking for an element in the front or back<br>
@@ -76,8 +96,9 @@
                     </li>
                 </ul>
             </div>
+
+            <h2 class="ds-sect title">The Disadvantages</h2>
             <div class="ds-sect list">
-                <h2 >The Disadvantages</h2>
 
                 <ul>
                     <li>Arrays are a fixed-length data structure. Their size
@@ -97,12 +118,9 @@
                     </li>
                 </ul>
             </div>
-    
-            <div class="ds-sect performance">
-    
-            </div>
+
+            <h2 class="ds-sect title">Code Implementation (Java)</h2>
             <div class="ds-sect code">
-                <h3>Code Implementation (Java)</h3>
                 <code>public class ArrayDemo {
                     public static void main(String[] args) {<br>
                         <br>
@@ -116,10 +134,10 @@
                                       &emsp;&emsp;}<br>
                 }</code></pre><br>
             </div>
+
         </main>
 
-        <footer>
-            <div id="footer"></div>
-        </footer>
+        <footer id="footer"></footer>
+
     </body>
 </html>

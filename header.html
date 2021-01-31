@@ -9,7 +9,7 @@
     .header {
         background-color: #242323;
         height : 80px;
-        width : 100%;
+        width : 100vw;
     }
     .inner-header {
         background-color:#242323;
@@ -18,10 +18,24 @@
         display: block;
         margin: 0 auto; 
     }
+
+    @media(max-width: 800px) {
+
+        .navigation {
+            display: none;
+        }
+        .logo-container {
+            padding-left: 25vmin;
+        }
+        
+    }
+
     .logo-container {
         height: 100%;
         display: table;
         float: left;
+
+        padding-top: 20px;
     }
 
     .logo-container h1 {
@@ -79,7 +93,7 @@
         <div class = "header">
             <div class="inner-header">
                 <div class="logo-container">
-                    <h1>Data<span>Structures</span></h1>
+                    <a href="index.html"><h1>Data<span>Structures</span></h1></a> 
                 </div>
                 <ul class="navigation">
                     <a class="header-link" href = "index.html"><li>Home</li></a>

@@ -1,63 +1,101 @@
 <style>
+
+    @import url(https://fonts.googleapis.com/css?family=Montserrat);
+    @import url(https://fonts.googleapis.com/css?family=Open+Sans);
+
     main {
-        height:2050px;
-        background-color: white;
-        color: black;
-        margin-left: 1.2em;
+        font-family: 'Montserrat';
 
-        line-height: 25px;
-        
+
+    }
+    
+    h3 {
+            padding-bottom: 10px;
+        }
+    /*Classes*/
+
+    @media(min-width: 801px) {
+
+        .ds-sect, .pg-img {
+            padding-top: 30px;
+            padding-left: 30px;
+            font-size: 22px;
+        }
+
+        .ds-sect:last-child {
+            padding-bottom: 20px;
+        }
+
+        .ds-sect code {
+            margin-right: 200px;
+            
+            font-size: 18px;
+            color: green;
+        }
+
+
     }
 
-    .ds-sect {   
-        font-size: 18px;
-        margin: 30px;
-        
-       
-    }
-    .code {
-        color: green;
-        width: 50%;
-        font-size: 16px;
-        font-family: monospace;
+    @media(max-width: 800px) {
+        main {
+            background-color: white;
+        }
+
+        .ds-sect {
+            font-size: 5vw;
+            
+            padding: 20px 0px 20px 10px;
+        }
+
+        .pg-img {
+            width: 100%;
+            height: auto;
+        }
+
+        .ds-sect code {
+            color: green;
+            font-family: monospace;
+            font-size: 12px;
+            padding-left: 10px;
+            line-height: 20px;
+        }
     }
 
-    .list {
+    @media(max-width: 600px) {
+        .ds-sect code {
+            font-size: 10px;
+        }
     }
-
 
 </style>
-
 <!DOCTYPE html>
 <html>
     <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Red Black Trees</title>
         <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
         <script src="my-js/core.js"></script>
-        <script src="footer.html"></script>
+
     </head>
     <body>
-        <header>
-            <div id="header"></div>
-        </header>
-        
+        <header id="header"></header>
 
         <main>
             <div class="ds-sect">
                 <h1>Red-Black Trees</h1>
             </div>
-            <div class="ds-sect definition">
-                <h2>What are they?</h2>
+            <div class="ds-sect title"><h2>What are they?</h2></div>
+            <div class="ds-sect definition">       
                 <p>
                     Red-Black trees are a special kind of self-balancing tree. The nodes
                     contain an extra bit of information- their color: red or black. <br>
                     In order to remain balanced, the tree has several rules it follows to
                     maintain itself, which it decides based on the color of the nodes.
                 </p>
-        
-                <h3>The Rules</h3>
+            </div>
+
+            <div class="ds-sect">
+                <h2>The Rules</h2>
+            </div>
+            <div class="ds-sect">
                 <ol id = "rb-tree-rules">
                     <li>The root must be black</li>
                     <li>Children of red nodes are black</li>
@@ -66,45 +104,45 @@
                     <li>No path can have two or more consecutive red nodes</li>
                     <li>Null nodes are always considered black</li>
                 </ol>
-                <div id = "rb-tree-img">
-                    <img src = "https://algorithmtutor.com/images/RBTreeExample.png"
-                    alt = "Red-Black tree example">
-                    <figcaption>Red-Black Tree example</figcaption>
-                </div>
             </div>
-            <div class="ds-sect" id="miscellaneous">
-               
-    <div id = "self-balancing div">
-        <h2>Re-balancing</h2>
-        <p>Red-Black trees self-balance by two mechanisms: color-flipping and 
-            rotations. <br><br>If the sibling of the new node's parent is:
-            <ul>
-             <li>black, rotate the tree. The colors should be reset so the parent is black and children are red.</li>
-             <li>red, color-flip. The new node's grandparent node is flipped, as well as
-                 both of its children (one of these children is the new node's parent).<br>
-             </li>
-            </ul>
-        </p>
-        <h3>Color-flipping</h3>
-        <img src = "rb-colorflip.jpg" alt = "basic color-flip image">
-        <h3>Rotation</h3>
-        <p>Rotation occurs at the imbalanced part of the tree. Here are two examples:</p>
-        <img src = "/images/RB-rotation-ex1.jpg" alt = "rotation example 1" >
-        <figcaption>Right Rotation Example</figcaption>
-        <img src = "images/Rb-rotation-ex2.jpg" alt = "rotation example 2">
-        <figcaption>Left-Right Rotation Example</figcaption>
+            <div id = "rb-tree-img">
+                <img class="pg-img" src = "https://algorithmtutor.com/images/RBTreeExample.png"
+                alt = "Red-Black tree example">
+                <figcaption>Red-Black Tree example</figcaption>
+            </div>
 
-    </div> 
+            <div class="ds-sect">
+                <h2>Re-balancing</h2>
             </div>
+            <div class="ds-sect">
+                <p>Red-Black trees self-balance by two mechanisms: color-flipping and 
+                    rotations. <br><br>If the sibling of the new node's parent is:
+                    <ul>
+                     <li>black, rotate the tree. The colors should be reset so the parent is black and children are red.</li>
+                     <li>red, color-flip. The new node's grandparent node is flipped, as well as
+                         both of its children (one of these children is the new node's parent).<br>
+                     </li>
+                    </ul>
+                </p>
+                <h3>Color-flipping</h3>
+                <img src = "rb-colorflip.jpg" alt = "basic color-flip image">
+                <h3>Rotation</h3>
+                <p>Rotation occurs at the imbalanced part of the tree. Here are two examples:</p>
+                <img src = "/images/RB-rotation-ex1.jpg" alt = "rotation example 1" >
+                <figcaption>Right Rotation Example</figcaption>
+                <img src = "images/Rb-rotation-ex2.jpg" alt = "rotation example 2">
+                <figcaption>Left-Right Rotation Example</figcaption>
+            </div>
+
+            <div class="ds-sect title"><h2>The Advantages</h2></div>
             <div class = "ds-sect list">
-                <h2>The Advantages</h2>
                 <ul id = advantage-list>
                     <li>Self-rotating tree that allows for optimized peformance</li>
                     <li>Useful when there is a lot of data being added and removed</li>
                 </ul>
             </div>
+            <div class="ds-sect title"><h2>The Disadvantages</h2></div>
             <div class="ds-sect list">
-                <h2>The Disadvantages</h2>
                 <ul id = "disadvantage-list">
                     <li>B-trees are better for indexing and storing info on a disk</li>
                     <li>Implementation can be complicated; there are several differing
@@ -112,8 +150,9 @@
                     </li>
                 </ul>
             </div>
-    
-            <div class="ds-sect performance">
+
+            
+            <div class="ds-sect">
                 <h2>Performance</h2>
                 <p>Red-Black Trees on average perform at an O(log n) algorithmic
                     complexity. Given that they are self-balancing, one can<br>
@@ -121,12 +160,9 @@
                 </p>
             </div>
 
-            <div class="ds-sect code">
-            </div>
         </main>
 
-        <footer>
-            <div id="footer"></div>
-        </footer>
+        <footer id="footer"></footer>
+
     </body>
 </html>

@@ -1,60 +1,84 @@
 <style>
+    @import url(https://fonts.googleapis.com/css?family=Montserrat);
+    @import url(https://fonts.googleapis.com/css?family=Open+Sans);
+
     main {
-        height:2300px;
-        background-color: white;
-        color: black;
-        margin-left: 1.2em;
+        font-family: 'Montserrat';
+    }
 
-        line-height: 25px;
+    /*Classes*/
+
+    @media(min-width: 801px) {
+
+        .ds-sect, .pg-img {
+            padding-top: 30px;
+            padding-left: 30px;
+            font-size: 22px;
+        }
+
+        .ds-sect:last-child {
+            padding-bottom: 20px;
+        }
+
+        .ds-sect code {
+            margin-right: 200px;
+            
+            font-size: 18px;
+            color: green;
+        }
+
+
+    }
+
+    @media(max-width: 800px) {
+        main {
+            background-color: white;
+        }
+
+        .ds-sect {
+            font-size: 5vw;
+            
+            padding: 20px 0px 20px 10px;
+        }
+
+        .pg-img {
+            width: 100%;
+            height: auto;
+        }
+
+        .ds-sect code {
+            color: green;
+            font-family: monospace;
+            font-size: 12px;
+            padding-left: 10px;
+            line-height: 20px;
+        }
+
         
     }
-
-    .ds-sect {   
-        font-size: 18px;
-        margin: 30px;
-        
-       
-    }
-    .code {
-        color: green;
-        width: 50%;
-        font-size: 16px;
-        font-family: monospace;
-    }
-
-    .list {
-    }
-
 
 </style>
-
 <!DOCTYPE html>
 <html>
     <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Queues</title>
         <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
         <script src="my-js/core.js"></script>
-        <script src="footer.html"></script>
+
     </head>
     <body>
-        <header>
-            <div id="header"></div>
-        </header>
-        
+        <header id="header"></header>
 
         <main>
             <div class="ds-sect">
-                <h1>Queues`</h1>
+                <h1>Queues</h1>
             </div>
+            <div class="ds-sect title"><h2>What are they?</h2></div>
             <div class="ds-sect definition">
-                <h2>What are they?</h2>
                 <p>Queues are an abstract data structure that orders a collection linearly,
                     in sequential order. You can think of it like being in a line at a store.<br>
                     The first one in line is the first to be processed (First-In, First-Out).
                 </p>
-                <img src = "images/queue-demo.jpg" alt = "queue img">
+                <img  class= "pg-img" src = "images/queue-demo.jpg" alt = "queue img">
                 <p>
                     Queue architecture can be used in cases where one needs to access elements
                     in the order in which they were added. The queue tool in apps <br>
@@ -62,8 +86,9 @@
                     add will eventually be accessed, but not before the ones waiting prior.
                 </p>
             </div>
-            <div class="ds-sect" id="miscellaneous">
-                <h2>Operations</h2>
+
+            <div class="ds-sect title"><h2>Operations</h2></div>
+            <div class="ds-sect">
                 <p>A queue's main, distinct operations include: <i>enqueue</i>,
                 <i> dequeue</i>, <i>front</i>, and <i>rear</i>.</p>
                 <h3>Enqueue</h3>
@@ -82,85 +107,86 @@
                 the end of the queue.
                 </p>
             </div>
+
+            <div class="ds-sect title"><h2>The Advantages</h2></div>
             <div class = "ds-sect list">
-                <h2>The Advantages</h2>
                 <ul>
                     <li>Ideal for maintaining sequential order</li>
                     <li>Simple and easy to maintain</li>
                     <li>Can be overriden for increased functionality (i.e. priority queues)</li>
                 </ul>
             </div>
-            <div class="ds-sect list">
-                <h2>The Disadvantages</h2>
+
+            <div class="ds-sect title"><h2>The Disadvantages</h2></div>
+            <div class="ds-sect performance">
                 <ul>
                     <li>Random access is not a feature of queues</li>
                     <li>Expensive to search for particular elements</li>
                     <li>Queues typically require capacities</li>
                 </ul>
             </div>
-    
-            <div class="ds-sect performance">
-            </div>
-            <div class="ds-sect code">
+
+            <div class="ds-sect title">
                 <h2>Code Implementation (Java)</h2>
                 <p>Here we will use an array implementation for a queue.</p>
-                <pre><code>
-                    public class Queue&ltT&gt {
-            
-                        private int capacity;
-                        private int size;
-                        T[] queue;
-                        private int front, rear;
-                        
-                        public Queue(int capacity) {
-                            //Creating object array that is casted to T data type 
-                            //Usually bad practice, but for the sake of example
-                            queue = (T[]) new Object[capacity];
-                            
-                            this.capacity=capacity;
-                            this.front=0;
-                            this.rear=-1;
-                            this.size = 0;
-                        }
-                        
-                        public void enqueue(T data) throws Exception {
-                            
-                            if(isFull()) {
-                                throw new Exception("Queue is full!");
-                            } else {
-                                
-                                rear = (rear + 1) % capacity; //update pointer of rear
-                                 
-                                queue[rear] = data; //add to new rear 
-                                size++; //increment size
-                            }		
-                        }
-                        
-                        public T dequeue() throws Exception {
-                            //if queue is empty
-                            if(size==0) {
-                                throw new Exception("Queue is empty!");
-                            } else {
-                                T data = queue[front];
-                                
-                                front = (front+1) % capacity; //update front pointer
-                                size--;
-                                
-                                return data;
-                            }
-                        }
-                        
-                        //checks if queue is full
-                        private boolean isFull() {
-                            return (size==capacity);
-                        }
-                    }
-                </code></pre>
             </div>
+            <div class="ds-sect code">
+                
+                <pre><code>
+public class Queue&lt;T&gt; {
+            
+    private int capacity;
+    private int size;
+    T[] queue;
+    private int front, rear;
+                        
+    public Queue(int capacity) {
+        //Creating object array that is casted to T data type 
+        //Usually bad practice, but for the sake of example
+        queue = (T[]) new Object[capacity];
+                            
+        this.capacity=capacity;
+        this.front=0;
+        this.rear=-1;
+        this.size = 0;
+    }
+                        
+    public void enqueue(T data) throws Exception {
+                            
+        if(isFull()) {
+            throw new Exception("Queue is full!");
+        } else {
+                                
+            rear = (rear + 1) % capacity; //update pointer of rear
+                                 
+            queue[rear] = data; //add to new rear 
+            size++; //increment size
+        }		
+    }
+                        
+    public T dequeue() throws Exception {
+        //if queue is empty
+        if(size==0) {
+            throw new Exception("Queue is empty!");
+        } else {
+            T data = queue[front];
+                                
+            front = (front+1) % capacity; //update front pointer
+            size--;
+                                
+            return data;
+        }
+    }
+                        
+    //checks if queue is full
+    private boolean isFull() {
+        return (size==capacity);
+    }
+}</code></pre>
+        </div>
         </main>
 
-        <footer>
-            <div id="footer"></div>
-        </footer>
+        <footer id="footer"></footer>
+
     </body>
 </html>

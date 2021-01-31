@@ -1,69 +1,102 @@
 <style>
+
+    @import url(https://fonts.googleapis.com/css?family=Montserrat);
+    @import url(https://fonts.googleapis.com/css?family=Open+Sans);
+
     main {
-        height:2450px;
-        background-color: white;
-        color: black;
-        margin-left: 1.2em;
+        font-family: 'Montserrat';
 
-        line-height: 25px;
-        
+
+    }
+    
+    h3 {
+            padding-bottom: 10px;
+        }
+    /*Classes*/
+
+    @media(min-width: 801px) {
+
+        .ds-sect, .pg-img {
+            padding-top: 30px;
+            padding-left: 30px;
+            font-size: 22px;
+        }
+
+        .ds-sect:last-child {
+            padding-bottom: 20px;
+        }
+
+        .ds-sect code {
+            margin-right: 200px;
+            
+            font-size: 18px;
+            color: green;
+        }
+
+
     }
 
-    .ds-sect {   
-        font-size: 18px;
-        margin: 30px;
-        
-       
-    }
-    .code {
-        color: green;
-        width: 50%;
-        font-size: 16px;
-        font-family: monospace;
+    @media(max-width: 800px) {
+        main {
+            background-color: white;
+        }
+
+        .ds-sect {
+            font-size: 5vw;
+            
+            padding: 20px 0px 20px 10px;
+        }
+
+        .pg-img {
+            width: 100%;
+            height: auto;
+        }
+
+        .ds-sect code {
+            color: green;
+            font-family: monospace;
+            font-size: 12px;
+            padding-left: 10px;
+            line-height: 20px;
+        }
     }
 
-    .list {
+    @media(max-width: 600px) {
+        .ds-sect code {
+            font-size: 10px;
+        }
     }
-
 
 </style>
-
 <!DOCTYPE html>
 <html>
     <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Binary Search Trees</title>
         <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
         <script src="my-js/core.js"></script>
-        <script src="footer.html"></script>
+
     </head>
     <body>
-        <header>
-            <div id="header"></div>
-        </header>
-        
+        <header id="header"></header>
 
         <main>
             <div class="ds-sect">
                 <h1>Binary Search Trees</h1>
             </div>
-            <div class="ds-sect definition">
-                
-                <h2>What are they?</h2>
-                
+            <div class="ds-sect title"><h2>What are they?</h2></div>
+            <div class="ds-sect definition">       
                 <p>Binary search trees are tree structures that order their nodes. A node whose key
                     greater than the key of the node it is being compared to would belong to the <br>
                     right of the compared node, and if the key is less than the compared node's key, 
                     it would go to the left. 
                 </p>
-                <img src = "https://www.gatevidyalay.com/wp-content/uploads/2018/07/Binary-Search-Tree-Example.png" 
+                <img class="pg-img" src = "https://www.gatevidyalay.com/wp-content/uploads/2018/07/Binary-Search-Tree-Example.png" 
                 alt = "image of a binary search tree"> 
             </div>
-            <div class="ds-sect" id="miscellaneous">
-            </div>
-            <div class = "ds-sect list">
+
+            <div class="ds-sect">
                 <h2>The Advantages</h2>
+            </div>
+            <div class="ds-sect">
                 <p>Binary search trees have a faster average time complexity than their list counterparts.
                     Assuming a tree is balanced, operations generally take O(log n) time compared to <br>
                     lists or arrays that have a log(n) average time complexity.
@@ -75,8 +108,11 @@
                     </li>
                 </ul>
             </div>
-            <div class="ds-sect list">
-                <h2>The Disadvantages</h2>
+
+            <div class="ds-sect title"><h2>The Disadvantages</h2></div>
+            <div class = "ds-sect list">
+                
+                
                 <li>The benefits of the binary search tree over structures such as linked lists and arrays 
                     are primarily assuming the tree is balanced. Unbalanced trees are similar in function<br>
                     and algorithmic cost to a linked list.
@@ -86,83 +122,77 @@
                     to perform at its optimized time complexity after several insertion or deletions.
                 </li>
             </div>
-    
-            <div class="ds-sect performance">
 
+            <div class="ds-sect">
+                Code Implementation (In Java)
             </div>
-
-
-            <a href="treesContinued.html">More about Trees</a>
-
             <div class="ds-sect code">
-                <h2>Code implementation (Java)</h2>
                 <pre><code>
-                    //This class defines basic binary search tree, and a method to add more nodes
-                    //to the tree
-                    public class BinaryTree&ltK extends Comparable&ltK>>{
+//This class defines basic binary search tree, and a method to add more nodes
+//to the tree
+public class BinaryTree&ltK extends Comparable&ltK>>{
                         
-                        private class Node {
-                            Node left, right; //left and right child for node
-                            K key; //data that node holds
+    private class Node {
+        Node left, right; //left and right child for node
+        K key; //data that node holds
                             
-                            Node(K key) {
-                                this.key = key;
-                            }
-                        }
+        Node(K key) {
+            this.key = key;
+        }
+    }
                         
-                        Node root;
-                        int height;
+    Node root;
+    int height;
+    
+    public BinaryTree(Node n) {
+        root = n;
+        root.left=null;
+        root.right=null;
+        height = 0;
+    }
                         
-                        public BinaryTree(Node n) {
-                            root = n;
-                            root.left=null;
-                            root.right=null;
-                            height = 0;
-                        }
-                        
-                        //returns true if node doesn't already exist and adding was successful
-                        public boolean addNode(K key) {
-                            if(root==null) {
-                                this.root = new Node(key); //if root is null, then begin list with new root
-                                return true;
-                            }
+    //returns true if node doesn't already exist and adding was successful
+    public boolean addNode(K key) {
+        if(root==null) {
+            this.root = new Node(key); //if root is null, then begin list with new root
+            return true;
+        }
                             
-                            return addAux(root, key);
-                        }
+            return addAux(root, key);
+        }
                         
-                        private boolean addAux(Node n, K key ) {
-                            if(n.key.compareTo(key)==0) {
-                                return false;  //node already exists
+        private boolean addAux(Node n, K key ) {
+            if(n.key.compareTo(key)==0) {
+                return false;  //node already exists
                                 
-                            } else if(n.key.compareTo(key)&lt0) { // if current node key is less than
-                                                                //key, move right
+            } else if(n.key.compareTo(key)&lt0) { // if current node key is less than
+                                                 //key, move right
                                 
-                                if(n.right==null) {
-                                    n.right = new Node(key); //new leaf node to right of current node
-                                    return true;
-                                } else {
-                                    return addAux(n.right, key);
-                                }
+            if(n.right==null) {
+                n.right = new Node(key); //new leaf node to right of current node
+                return true;
+            } else {
+                return addAux(n.right, key);
+            }
                                 
-                            } else if(n.key.compareTo(key)>0) { //if current node key is greater than
-                                                                //key, move left
-                                if(n.left==null) {
-                                    n.left = new Node(key); //new node created to left of current node
-                                    return true;
-                                } else {
-                                    return addAux(n.left, key);
-                                }
-                            }
+            } else if(n.key.compareTo(key)>0) { //if current node key is greater than
+                                                //key, move left
+                if(n.left==null) {
+                    n.left = new Node(key); //new node created to left of current node
+                    return true;
+                } else {
+                    return addAux(n.left, key);
+                }
+            }
                             
-                            return false;
-                        }
-                    } 
-                </code></pre>
-            </div>
+            return false;
+        }
+    }</code></pre>
+        </div>
+
         </main>
 
-        <footer>
-            <div id="footer"></div>
-        </footer>
+        <footer id="footer"></footer>
+
     </body>
 </html>

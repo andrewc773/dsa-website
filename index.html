@@ -1,51 +1,32 @@
-<style>
-    body {
-        background-color: white;
-        
-    }
+<!Doctype html>
+<html>
+<head>
+    <style>
 
-    #main-body {
-        margin-bottom: 50px;
-    }
+    @import url(https://fonts.googleapis.com/css?family=Montserrat);
+    @import url(https://fonts.googleapis.com/css?family=Open+Sans);
 
-    header {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: space-evenly;
-        background-color: black;
-        color: white;
-    }
+    /*********Tag Elements*********/
+    * {
+            
+            margin: 0;
+            padding: 0;
+            text-decoration: 0;
+            list-style: none;
+            
+        }
 
-    #ds-list {
+        main {
+        padding-bottom: 20px;
         display: grid;
-
-        grid-template-columns: 200px 200px 200px 200px 200px;
-        column-gap: 15px;
-        row-gap: 25px;
-
         justify-items: center;
+        width: 100vw;
+        background-color: white;
 
-    }
-
-    #list-header {
-
-        margin-top: 20px;
+        height: 100%;
         
-        /*background-color: #242323;*/
-        width: 60%;
-        height: 60px;
-
-        display: flex;
-
-        justify-content: center;
-
     }
-
-    #list-title {
-        color: black;
-        font-size: 30px;
-    }
+    /*********Classes*********/
 
     .ds-btn {
         position: relative;
@@ -58,37 +39,60 @@
         
     }
 
-    #main-body {
-        display: grid;
-        justify-items: center;
-    }
+    .ds-btn {
+        
 
+        padding: 1rem;
+     }
+ 
+     .ds-buttons {
+         
+         max-width: 100%;
+         margin: 0 auto;
+         display: grid;
+         grid-gap: 1rem;
+
+         
+     }
     /*Media Queries*/
-    @media(max-width: 375px) {
-        #ds-list {
-            width: 40vw;
+
+
+    @media(max-width: 1200px) {
+
+        * {
+            overflow-x: hidden;
         }
     }
-</style>
-<!DOCTYPE html>
-<htm1>
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Data Structures and Algorithms</title>
+ 
+     @media (min-width: 600px) {
+         .ds-buttons { grid-template-columns: repeat(2, 1fr); }
+
+
+     }
+ 
+     @media (min-width: 900px) {
+         .ds-buttons { grid-template-columns: repeat(3, 1fr); }
+     }
+ 
+     @media (min-width: 1200px) {
+         .ds-buttons { grid-template-columns: repeat(5, 1fr); }
+     }
+
+
+
+        
+    </style>
+
     <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
     <script src="my-js/core.js"></script>
     <script src="my-js/index.js"></script>
-    <script src="footer.html"></script>
-    
 </head>
 <body>
-    <div id = "header"></div>
-    <div id="main-body">
-        <div id="list-header">
-            <h3 id="list-title">Common Structures</h3> 
-        </div>
-        <div id="ds-list">
+    <header id = "header">
+    </header>
+    <main>
+
+        <div class="ds-buttons">
             <input class = "ds-btn"id="array-btn" type="image" src="images/array btn (2).png" width="200" height="200">
             <input class = "ds-btn" id="linkedlist-btn"  type="image" src="images/linked list btn.png" width="200" height="200">
             <input class = "ds-btn" id="stack-btn" type="image" src="images/stack btn (1).png" width="200" height="200">
@@ -99,14 +103,12 @@
             <input class = "ds-btn" id="heap-btn" type="image" src="images/heap btn.png" width="200" height="200">
             <input class = "ds-btn" id="rbtree-btn" type="image" src="images/rb tree btn.png" width="200" height="200">
             <input class = "ds-btn" id="avl-btn" type="image" src="images/avl btn.png" width="200" height="200">
-        </div>
-    </div>
+          </div>
+    </main>
 
-    <div id="footer">
+    <footer id="footer">
         
-    </div>
+    </footer>
 
 </body>
-
-
 </html>

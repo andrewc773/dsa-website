@@ -1,66 +1,104 @@
 <style>
+
+    @import url(https://fonts.googleapis.com/css?family=Montserrat);
+    @import url(https://fonts.googleapis.com/css?family=Open+Sans);
+
     main {
-        height:850px;
-        background-color: white;
-        color: black;
-        margin-left: 1.2em;
+        font-family: 'Montserrat';
 
-        line-height: 25px;
-        
+
+    }
+    
+    h3 {
+            padding-bottom: 10px;
+        }
+    /*Classes*/
+
+    @media(min-width: 801px) {
+
+        .ds-sect, .pg-img {
+            padding-top: 30px;
+            padding-left: 30px;
+            font-size: 22px;
+        }
+
+        .ds-sect:last-child {
+            padding-bottom: 20px;
+        }
+
+        .ds-sect code {
+            margin-right: 200px;
+            
+            font-size: 18px;
+            color: green;
+        }
+
+
     }
 
-    .ds-sect {   
-        font-size: 18px;
-        margin: 30px;
-        
-       
-    }
-    .code {
-        color: green;
-        width: 50%;
-        font-size: 16px;
-        font-family: monospace;
+    @media(max-width: 800px) {
+        main {
+            background-color: white;
+        }
+
+        .ds-sect {
+            font-size: 5vw;
+            
+            padding: 20px 0px 20px 10px;
+        }
+
+        .pg-img {
+            width: 100%;
+            height: auto;
+        }
+
+        .ds-sect code {
+            color: green;
+            font-family: monospace;
+            font-size: 12px;
+            padding-left: 10px;
+            line-height: 20px;
+        }
     }
 
-    .list {
+    @media(max-width: 600px) {
+        .ds-sect code {
+            font-size: 10px;
+        }
     }
-
 
 </style>
-
 <!DOCTYPE html>
 <html>
     <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>AVL Trees</title>
         <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
         <script src="my-js/core.js"></script>
-        <script src="footer.html"></script>
+
     </head>
     <body>
-        <header>
-            <div id="header"></div>
-        </header>
-        
+        <header id="header"></header>
 
         <main>
             <div class="ds-sect">
                 <h1>AVL Trees</h1>
             </div>
-            <div class="ds-sect definition">
-                <h2>What is it?</h2>
-                    <p>AVL trees are another example of a self balancing tree. The rule to keep
-                        in mind for these trees is that <b>the difference in height must be <br>
-                        less than or equal to 1 (height&lt=1)</b>. 
-                    </p>
-                    <p>
-                        AVL trees self-correct when this rule is violated, using rotations. In code,
-                        this consists of redirecting pointers, which we will see later.
-                    </p>
+            <div class="ds-sect title"><h2>What are they?</h2></div>
+            <div class="ds-sect definition">       
+                <p>AVL trees are another example of a self balancing tree. The rule to keep
+                    in mind for these trees is that <b>the difference in height must be <br>
+                    less than or equal to 1 (height&lt=1)</b>. 
+                </p>
+                <p>
+                    AVL trees self-correct when this rule is violated, using rotations. In code,
+                    this consists of redirecting pointers, which we will see later.
+                </p>
             </div>
-            <div class="ds-sect" id="miscellaneous">
+
+            <div class="ds-sect">
                 <h2>Operations</h2>
+            </div>
+            <div class="ds-sect">
+                
 
                 <h3>Insertion</h3>
                     <p>Following the insertion of a node into the correct spot in the tree, 
@@ -83,26 +121,9 @@
                          tree being rebalancd. Below are some other examples:
                     </p>
             </div>
-            <div class = "ds-sect list">
-
-            </div>
-            <div class="ds-sect list">
-            </div>
-    
-            <div class="ds-sect performance">
-
-            </div>
-
-            <div class="ds-sect code">
-                <h2>Code Implementation (Java)</h2>
-                <pre><code>
-                    insert code here
-                </code></pre>
-            </div>
         </main>
 
-        <footer>
-            <div id="footer"></div>
-        </footer>
+        <footer id="footer"></footer>
+
     </body>
 </html>

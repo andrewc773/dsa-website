@@ -1,17 +1,22 @@
 <style>
-    main {
-        height:2450px;
-        background-color: white;
-        color: black;
-        margin-left: 1.2em;
+    * {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        text-decoration: none;
+    }
 
+    main {
+        height:1200px;
+        background-color: orange;
+        color: black;
+        padding: 1em ;
         line-height: 25px;
         
     }
 
     .ds-sect {   
-        font-size: 18px;
-        margin: 30px;
+        font-size: 22px;
         
        
     }
@@ -22,7 +27,20 @@
         font-family: monospace;
     }
 
-    .list {
+    @media(max-width: 1200px) {
+
+        main {
+            font-size: 2vw;
+            padding-left:  0.5em ;
+        }
+
+    }
+
+    @media(max-width: 900px) {
+        main img {
+            width: 100%;
+            height: auto;
+        }
     }
 
 
@@ -36,7 +54,6 @@
         <title>Hash Tables</title>
         <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
         <script src="my-js/core.js"></script>
-        <script src="footer.html"></script>
     </head>
     <body>
         <header>
@@ -45,53 +62,87 @@
         
 
         <main>
-            <div class="ds-sect">
-                <h1>About</h1>
-            </div>
-            <div class="ds-sect">
-                <div id="quote">
-                    <p>
-                        Bad programmers worry about the code. Good programmers worry about data structures and their relationships. - Linus Torvalds
-                    </p>
-                    
+            <div class="ds-sect definition">
+                <h2>What are they?</h2>
+                <p>An array is a collection of elements, usually of the same data type
+                    (such as an integer or string), that is put together in a list-fashion.<br>
+                    Each element has its own spot in the list, which can be accessed directly
+                    in O(1) time if the index is known beforehand.<br>
+                </p>
+                <div id = "array-img" style="margin-right: -80px">
+                    <img src = "/images/array demo.jpeg">;
                 </div>
-                
             </div>
-            <div class="ds-sect">
-                <h2>What is this website about?</h2>
-                <p><i>Data Structures: An Introduction</i> is designed to teach its members fundamental data structures 
-                that are commonly seen in the vastly-expanding world of computer science and technology. By providing<br>
-                simple visuals and explanations of data structures, we hope to deepen understanding enough so one may 
-                be able to implement these structures in their computer science endeavors. The information taught on<br>
-                this site can aid for coding interviews, school coursework and exams, and personal projects. </p>
+
+            <div class = "ds-sect list">
+                <h2>The Advantages</h2>
+                <ul>
+                    <li>With an array, you can access any spot in it in O(1) time. 
+                        Whether you are looking for an element in the front or back<br>
+                        list does not matter in terms of time complexity.</li>
+                    <li>
+                        If an element is known before hand, you can find it immediately
+                    </li>    
+                    <li>Arrays make it easy and simple to access data, especially
+                        if they are of the same type.</li>
+                    <li>
+                        Arrays can also provide a container for all related data, 
+                        which makes for better organization.
+                    </li>
+                </ul>
             </div>
+
+            <div class="ds-sect list">
+                <h2 >The Disadvantages</h2>
+
+                <ul>
+                    <li>Arrays are a fixed-length data structure. Their size
+                        must be set upon initializtion, which can be incovenient<br>
+                        if the number of elements coming in is unknown or ongoing.
+                    </li>
+                    <li>
+                        An array's elements are stored in sequential memory locations,
+                        making insertion and deletion difficult as the target approaches<br>
+                        the middle of the array.
+                    </li>
+                    <li>
+                        Another disadvantage is their inefficieny in checking for a particular
+                        element whose index in unknown. In order to find an element this way,
+                        one <br> must traverse the entire list from the beginning (assuming the
+                        array is unsorted). The search time has a potential O(n) time.
+                    </li>
+                </ul>
+            </div>
+
             <div class = "ds-sect">
-                <h2>Who is this website for?</h2>
-                <p>Anyone who is eager to become a better computer scientist! The information taught can greatly aid 
-                    students in university, job seekers preparing for interviews, or the curious mind who wants to <br>
-                    understand how computers are able to store and manipulate vast amounts of data in an efficient manner.
-                </p>
             </div>
+
             <div class="ds-sect">
-                <h2>How can one gain the most from this website?</h2>
-                <p>The best way to learn these structures is to study the material, and then try to implement it for
-                    yourself. Create scenarios where data needs to be stored, and pick the most suitable data structure<br>
-                    for the situation. Project-based learning is paramount to gaining deep understanding on initially 
-                    complex topics. The code provided is meant to aid you in seeing how the structures operate. Blindly<br>
-                    copying them will only impede your potential to truly get how the structures function.
-                </p>
             </div>
     
             <div class="ds-sect performance">
-
             </div>
 
             <div class="ds-sect code">
+                <h3>Code Implementation (Java)</h3>
+                <code>public class ArrayDemo {
+                    public static void main(String[] args) {<br>
+                        <br>
+                        &emsp;&emsp;int[] array = new int[5]; //initializing a list of 5 integer elements<br>
+                        <br>
+                        &emsp;&emsp;array[0] = 3; //putting integer 3 at index 0<br>
+                        <br>
+                        &emsp;&emsp;array[5] = 4; //will result in a null pointer exception because<br>
+                        &emsp;&emsp;//index 5 is out of the array index bounds!<br>
+                                      <br>
+                                      &emsp;&emsp;}<br>
+                }</code></pre><br>
             </div>
         </main>
 
         <footer>
             <div id="footer"></div>
         </footer>
+
     </body>
 </html>

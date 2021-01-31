@@ -6,7 +6,7 @@
     @import url(https://fonts.googleapis.com/css?family=Montserrat);
     @import url(https://fonts.googleapis.com/css?family=Open+Sans);
 
-
+    /*********Tag Elements*********/
     * {
             
             margin: 0;
@@ -15,7 +15,20 @@
             list-style: none;
             
         }
-    footer {
+
+        main {
+        padding-bottom: 20px;
+        display: grid;
+        justify-items: center;
+        width: 100vw;
+        background-color: white;
+
+        height: 100%;
+        
+    }
+
+
+        footer {
             height: auto ;
             width: 100vw;
             background-color:#18181a ;
@@ -23,13 +36,15 @@
             bottom: 0;
             display: grid;
             justify-items: center;
-
-            overflow: hidden;
         }
+
+
+
+
     /*********Classes*********/
 
 
-    .footer-bottom {
+        .footer-bottom {
             height: 100%;
             width: 100%;
             
@@ -163,10 +178,6 @@
             display: block;
             
         }
-
-        .inner-third:first-child {
-            width: 85%;
-        }
         .inner-third:last-child {
             margin-left: 0px;
         }
@@ -187,65 +198,81 @@
         }
     }
 
+    /*Main body*/
+
+    .ds-btn {
+        position: relative;
+        top: 0;
+        transition: top ease 0.3s;
+    }
+
+    .ds-btn:hover {
+        top: -15px;
+        
+    }
+
+    .ds-btn {
+        
+
+        padding: 1rem;
+     }
+ 
+     .ds-buttons {
+         
+         max-width: 100%;
+         margin: 0 auto;
+         display: grid;
+         grid-gap: 1rem;
+
+         
+     }
+ 
+     @media (min-width: 600px) {
+         .ds-buttons { grid-template-columns: repeat(2, 1fr); }
+
+
+     }
+ 
+     @media (min-width: 900px) {
+         .ds-buttons { grid-template-columns: repeat(3, 1fr); }
+     }
+ 
+     @media (min-width: 1200px) {
+         .ds-buttons { grid-template-columns: repeat(5, 1fr); }
+     }
+
+
+
         
     </style>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="my-js/test.js"></script>
 </head>
 <body>
-    <footer id="footer">
+    <header id = "header">
+        
+    </header>
 
-        <div class="inner-footer">
-            <div class="inner-third">
+    <main>
 
-                    <div class="contact-info">
-                        <h1>About</h1>
-                        <p>DataStructures is a website 
-                            dedicated to teaching
-                            data structures that computer scientists deal 
-                            with daily. The content can benefit
-                            anyone: from job seeker, to computer nerd.
-                        </p>
-                        <span><img src="images/phone-alt-solid.svg" height="20px" width="20px"></i> &nbsp; 301-825-6632</span>
-                        <span><img src="images/envelope-open-text-solid.svg" height="20px" width="20px"></i> &nbsp; andrew.chavarria77@gmail.com</span>
-                    </div>
-            </div>
+        <div class="ds-buttons">
+            <input class = "ds-btn"id="array-btn" type="image" src="images/array btn (2).png" width="200" height="200">
+            <input class = "ds-btn" id="linkedlist-btn"  type="image" src="images/linked list btn.png" width="200" height="200">
+            <input class = "ds-btn" id="stack-btn" type="image" src="images/stack btn (1).png" width="200" height="200">
+            <input class = "ds-btn" id="queue-btn" type="image" src="images/queue btn (2).png" width="200" height="200">
+            <input class = "ds-btn" id="htable-btn" type="image" src="images/hash table btn (1).png" width="200" height="200">
+            <input class = "ds-btn" id="tree-btn" type="image" src="images/trees btn (1).png" width="200" height="200">
+            <input class = "ds-btn" id="bst-btn" type="image" src="images/bst btn.png" width="200" height="200">
+            <input class = "ds-btn" id="heap-btn" type="image" src="images/heap btn.png" width="200" height="200">
+            <input class = "ds-btn" id="rbtree-btn" type="image" src="images/rb tree btn.png" width="200" height="200">
+            <input class = "ds-btn" id="avl-btn" type="image" src="images/avl btn.png" width="200" height="200">
+          </div>
+    </main>
 
-            <div class="inner-third">
-                <div class="footer-links">
-                    <h1>Links</h1>
-                    <ul>
-                        <a href="arrays.html"><li>Arrays</li></a>
-                        <a href="linkedList.html"><li>Linked Lists</li></a>
-                        <a href="stacks.html"><li>Stacks</li></a>
-                        <a href="queues.html"><li>Queues</li></a>
-                        <a href="hashtable.html"><li>Hashtables</li></a>
-                        <a href = "trees.html"><li>Trees</li></a>
-                        <a href="bst.html"><li>Binary Search Tree</li></a>
-                        <a href = "heap.html"><li>Heaps</li></a>
-                        <a href = "rbTree.html"><li>Red-Black Trees</li></a>
-                        <a href="avl.html"><li>AVL Trees</li></a>
-                    </ul>
-                </div>
-            </div>
+    <div id="footer">
+        
+    </div>
 
-            <div class="inner-third">
-                <div class="contact-form">
-                    <h1>Contact Us</h1>
-                    <br>
-                    <form action="index.html" method="post">
-                        <input type="email" name="email" class="text-input contact-input" placeholder="Your email address...">
-                       <div id="contain"><textarea name="message" class="text-input contact-input" placeholder="Your message..."></textarea></div> 
-                        <button type="submit" class="btn btn-big"><img src= "images/envelope-open-text-solid.svg" height="22px" width="22px">  Submit</button>
-                    </form>
-    
-                </div>
-                
-            </div>
-        </div>
-
-        <div class="footer-bottom">
-            &copy; DataStructures | Designed by Andrew Chavarria
-        </div>
-
-    </footer>
 </body>
 </html>
