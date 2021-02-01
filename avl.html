@@ -5,13 +5,26 @@
 
     main {
         font-family: 'Montserrat';
-
-
+        
     }
+
+    li {
+            list-style: inside;
+        }
+
     
     h3 {
             padding-bottom: 10px;
+            padding-top: 10px;
         }
+
+    #delete-img2 {
+        padding-left: 40px;
+        font-size: 22px;
+    }
+
+ 
+
     /*Classes*/
 
     @media(min-width: 801px) {
@@ -21,6 +34,8 @@
             padding-left: 30px;
             font-size: 22px;
         }
+
+
 
         .ds-sect:last-child {
             padding-bottom: 20px;
@@ -41,7 +56,7 @@
             background-color: white;
         }
 
-        .ds-sect {
+        .ds-sect, #delete-img2 {
             font-size: 5vw;
             
             padding: 20px 0px 20px 10px;
@@ -83,12 +98,14 @@
                 <h1>AVL Trees</h1>
             </div>
             <div class="ds-sect title"><h2>What are they?</h2></div>
-            <div class="ds-sect definition">       
-                <p>AVL trees are another example of a self balancing tree. The rule to keep
-                    in mind for these trees is that <b>the difference in height must be <br>
+            <div class="ds-sect definition">
+                <p>Invented in 1962, the AVL tree was the first self-balancing tree. The invariant to distinguish
+                    a balanced tree from an unbalanced tree was its height.
+                </p>       
+                <p>The rule to keep in mind for AVL trees is that <b>the difference in height must be
                     less than or equal to 1 (height&lt=1)</b>. 
                 </p>
-                <p>
+                <p><br>
                     AVL trees self-correct when this rule is violated, using rotations. In code,
                     this consists of redirecting pointers, which we will see later.
                 </p>
@@ -106,7 +123,7 @@
                         inside of the AVL tree. We do this by comparing the left and right of 
                         nodes beginning with the node just recently added. Below are examples:
                     </p>
-                    <img src = "images/AVL tree insert demo crop.jpg" alt = "avl tree insert image">
+                    <img class="pg-img" src = "images/AVL tree insert demo crop.jpg" alt = "avl tree insert image">
                     <figcaption>Above, 23 is being added to the AVL tree. When it is initally placed,
                          it creates a height difference among nodes that is greater than one.<br>
                         To fix this, the tree self-corrects the balance by performing a left rotation.
@@ -120,6 +137,42 @@
                          root is reached. Any difference in height greater than 1 results in the 
                          tree being rebalancd. Below are some other examples:
                     </p>
+                    <img class="pg-img" src="images/avl tree delete demo 1.jpg" alt="avl delete img1"> 
+                    <figcaption>An example where deletion does not imbalance the tree's height</figcaption>
+            </div>
+            <div id="delete-img2">
+                <img class="pg-img" src="images/avl tree delete demo 2.jpg" alt="avl delete img2"> 
+                <figcaption>This deletion requires re-balancing the tree. We start from the ground up</figcaption>
+            </div>
+            
+            <div class="ds-sect">
+                <h2>Comparison to Red-Black Trees</h2>
+            </div>
+            <div class="ds-sect">
+                <ul>
+                    <li>AVL trees tend to be more balanced than Red-Black trees, resulting in
+                        <b>faster lookups</b>
+                    </li>
+                    <li>AVL trees perform <b>slower insertions and removals</b> than Red-Black trees 
+                        due to more rotations to keep the tree balanced
+                    </li>
+                    <li>AVL trees require <b>more memory</b> because the node class must store
+                        more information</li>
+                    <li>AVL tree code for rotations tend to be <b>more complex to implement</b></li>
+                </ul>
+                <p>
+                    <br>
+                    Overall, AVL trees are more useful in applications that are retrieval intensive,
+                    whereas Red-Black trees are better suited when data is being inserted and removed 
+                    frequently. The latter is more often used in libraries in C++ and Java.
+                </p>
+            </div>
+
+            <div class="ds-sect">
+                <h2>Code Implementation</h2>
+            </div>
+            <div class="ds-sect">
+                Code is available at <a href="https://algs4.cs.princeton.edu/code/edu/princeton/cs/algs4/AVLTreeST.java.html">Princeton's Algorithms Page</a>
             </div>
         </main>
 

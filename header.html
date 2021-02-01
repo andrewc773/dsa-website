@@ -1,9 +1,22 @@
 <style>
+    @import url(https://fonts.googleapis.com/css?family=Montserrat);
     * {
         margin: 0;
         padding: 0;
         text-decoration: none;
         list-style: none;
+    }
+    
+    body {
+        
+    }
+    span{
+        padding-bottom: 5px;    
+    }
+
+    *{
+        list-style: none;
+        text-decoration: none;
     }
 
     .header {
@@ -51,12 +64,26 @@
         font-weight: 900;
     }
 
+    .inner-header img{
+        width: 60px;
+        height: 60px;
+
+        margin-top: 10px;
+    }
+
     .navigation {
         float: right;
         height: 100%;
     }
 
     .navigation a {
+        height: 100%;
+        display: table;
+        float: left;
+        padding: 0px 20px;
+    }
+
+    .inner-header h1 {
         height: 100%;
         display: table;
         float: left;
@@ -80,28 +107,220 @@
         margin-top: 10px;
         transition: all .3s;
     }
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  -webkit-animation-name: fadeIn; /* Fade in the background */
+  -webkit-animation-duration: 0.4s;
+  animation-name: fadeIn;
+  animation-duration: 0.4s
+}
 
+/* Modal Content */
+.modal-content {   
+    font-family: 'Montserrat';
+    background-color:#18181a ;
+
+    display: flex;
+    flex-direction: column;
+
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+  -webkit-animation-name: slideIn;
+  -webkit-animation-duration: 0.4s;
+  animation-name: slideIn;
+  animation-duration: 0.4s
+}
+
+/* The Close Button */
+.close {
+  color: white;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.modal-header {
+  padding: 2px 16px;
+  background-color: #18181a;
+  color: white;
+  
+}
+
+.modal-body {
+    padding: 2px 16px;
+    background-color:#18181a ;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+
+    color: white;
+
+    
+
+}
+
+.modal-footer {
+  padding: 2px 16px;
+  background-color:#18181a;
+  color: gray;
+  font-size: 12px;
+}
+
+/*Contact form*/
+.contact-form .contact-input {
+        background-color: lightgray;
+        color:black;
+        margin-bottom: 10px;
+        line-height: 1.5rem;
+        padding: .7rem 1.2rem;
+        border: none;
+        width: 100%;
+    }
+
+    .contact-form {
+        width: 80%;
+    }
+
+    .modal-logo img {
+        width: 60px;
+        height: 60px;
+    }
+
+    .modal-logo h2 {
+        padding: 15px 0px 0px 7px;
+    }
+
+    .modal-logo {
+        display: flex;
+        flex-direction: row;
+        padding-top: 10px;
+        
+    }
+
+
+
+    .contact-form .contact-input:focus {
+        background-color: white;
+    }
+
+    
+    .btn {
+        padding: .5rem 1rem;
+        color: white;
+        background-color: #0059ff;
+        border: 1px solid transparent;
+        
+    }
+
+    .btn-big {
+        padding: .7rem 1.3rem;
+        line-height: 1.3rem;
+    }
+
+
+/* Add Animation */
+@-webkit-keyframes slideIn {
+  from {top: -300px; opacity: 0} 
+  to {top: 50%; opacity: 1}
+}
+
+@keyframes slideIn {
+  from {top: -300px; opacity: 0}
+  to {top: 50%; opacity: 1}
+}
+
+@-webkit-keyframes fadeIn {
+  from {opacity: 0} 
+  to {opacity: 1}
+}
+
+@keyframes fadeIn {
+  from {opacity: 0} 
+  to {opacity: 1}
+}
+
+    /*Media Query  */
+
+    @media(min-width: 650px) {
+        .modal-content {
+            width: 600px;
+        }
+    }
 
 </style>
 
 <!DOCTYPE html>
 <html>
     <head>
-
+        <script src="my-js/contact-modal.js"></script>
     </head>
     <body>
         <div class = "header">
             <div class="inner-header">
+                <img src="images/ds logo.png">
                 <div class="logo-container">
-                    <a href="index.html"><h1>Data<span>Structures</span></h1></a> 
+                    <a href="index.html"><h1>Data<span>Structures</span></h1></a>
                 </div>
                 <ul class="navigation">
                     <a class="header-link" href = "index.html"><li>Home</li></a>
                     <a class="header-link" href="about.html"><li>About</li></a>     
-                    <a class="header-link" href="index.html#footer"><li>Contact</li></a>                  
+                    <a class="header-link" href="#" id="contact-btn"><li>Contact</li></a>                 
                 </ul>
             </div>
         </div>
 
+                <!-- The Modal -->
+        <div id="myModal" class="modal">
+
+        <!-- Modal content -->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <span class="close">&times;</span>
+                    <div class="modal-logo">
+                        <img class="modal-img" src="images/ds logo.png">
+                        <h2>Contact the Developer</h2>
+                    </div>
+                </div>
+                <div class="modal-body">
+                    <span><img src="images/phone-alt-solid.svg" height="20px" width="20px"></i> &nbsp; 301-825-6632</span>
+                    <span><img src="images/envelope-open-text-solid.svg" height="20px" width="20px"></i> &nbsp; andrew.chavarria77@gmail.com</span>
+                    <div class="contact-form">
+                            <form action="index.html" method="post">
+                            <input type="email" name="email" class="text-input contact-input" placeholder="Your email address...">
+                            <div id="contain"><textarea name="message" class="text-input contact-input" placeholder="Your message..."></textarea></div> 
+                            <button type="submit" class="btn btn-big"><img src= "images/envelope-open-text-solid.svg" height="22px" width="22px">  Submit</button>
+                        </form>
+                    </div>
+  
+                </div>
+                <div class="modal-footer">
+                    <p>&copy; DataStructures | Designed by Andrew Chavarria</p>
+                </div>
+            </div>
+  
+        </div>
     </body>
+
+    
 </html>

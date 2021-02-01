@@ -5,8 +5,10 @@
 
     main {
         font-family: 'Montserrat';
-
-
+    }
+    
+    li {
+        list-style:inside;
     }
     
     h3 {
@@ -99,7 +101,8 @@
             <div class="ds-sect">
                 <p>Binary search trees have a faster average time complexity than their list counterparts.
                     Assuming a tree is balanced, operations generally take O(log n) time compared to <br>
-                    lists or arrays that have a log(n) average time complexity.
+                    lists or arrays that have a log(n) average time complexity. 
+
                 </p>
                 <ul>
                     <li>Balanced search trees have an average search, deletion, and insertion time of O(log n)</li>
@@ -112,19 +115,20 @@
             <div class="ds-sect title"><h2>The Disadvantages</h2></div>
             <div class = "ds-sect list">
                 
-                
+                <ul>                
                 <li>The benefits of the binary search tree over structures such as linked lists and arrays 
-                    are primarily assuming the tree is balanced. Unbalanced trees are similar in function<br>
+                    are primarily assuming the tree is balanced. Unbalanced trees are similar in function
                     and algorithmic cost to a linked list.
                 </li>
                 <li>Binary search trees by themselves have no mechanism to self-correct any unbalancing
-                    that can occur from inserting or deleting nodes. This makes it unlikely for the tree<br>
+                    that can occur from inserting or deleting nodes. This makes it unlikely for the tree
                     to perform at its optimized time complexity after several insertion or deletions.
-                </li>
+                </li></ul>
+
             </div>
 
             <div class="ds-sect">
-                Code Implementation (In Java)
+                <h2>Code Implementation (In Java)</h2>
             </div>
             <div class="ds-sect code">
                 <pre><code>

@@ -12,6 +12,11 @@
         font-family: monospace;
     }
 
+    li {
+        list-style:inside;
+    }
+
+
     /*Classes*/
 
     @media(min-width: 801px) {
@@ -75,15 +80,16 @@
                     Each element has its own spot in the list, which can be accessed directly
                     in O(1) time if the index is known beforehand.<br>
                 </p>
+
             </div>
 
             <img class="pg-img" src="images/array demo.jpeg">
 
             <h2 class="ds-sect title">The Advantages</h2>
-            <div class="ds-sect list">
+            <div class="ds-sect">
                 <ul>
                     <li>With an array, you can access any spot in it in O(1) time. 
-                        Whether you are looking for an element in the front or back<br>
+                        Whether you are looking for an element in the front or back<br>&emsp;
                         list does not matter in terms of time complexity.</li>
                     <li>
                         If an element is known before hand, you can find it immediately
@@ -102,18 +108,18 @@
 
                 <ul>
                     <li>Arrays are a fixed-length data structure. Their size
-                        must be set upon initializtion, which can be incovenient<br>
+                        must be set upon initializtion, which can be incovenient<br>&emsp;
                         if the number of elements coming in is unknown or ongoing.
                     </li>
                     <li>
                         An array's elements are stored in sequential memory locations,
-                        making insertion and deletion difficult as the target approaches<br>
+                        making insertion and deletion difficult as the target approaches<br>&emsp;
                         the middle of the array.
                     </li>
                     <li>
                         Another disadvantage is their inefficieny in checking for a particular
                         element whose index in unknown. In order to find an element this way,
-                        one <br> must traverse the entire list from the beginning (assuming the
+                        one <br>&emsp; must traverse the entire list from the beginning (assuming the
                         array is unsorted). The search time has a potential O(n) time.
                     </li>
                 </ul>
