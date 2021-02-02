@@ -1,0 +1,51 @@
+
+    @import url(https://fonts.googleapis.com/css?family=Montserrat);
+    @import url(https://fonts.googleapis.com/css?family=Open+Sans);
+
+    main {
+        font-family: 'Montserrat';
+    }
+
+    /*Classes*/
+
+    @media(min-width: 801px) {
+
+        .ds-sect, .pg-img {
+            padding-top: 30px;
+            padding-left: 30px;
+            font-size: 22px;
+
+            width: 90%;
+        }
+
+        .ds-sect:last-child {
+            padding-bottom: 20px;
+        }
+
+
+    }
+
+    @media(max-width: 800px) {
+        main {
+            background-color: white;
+        }
+
+        .ds-sect {
+            font-size: 5vw;
+            
+            padding: 20px 0px 20px 10px;
+        }
+
+        .pg-img {
+            width: 100%;
+            height: auto;
+        }
+
+        .ds-sect code {
+            color: green;
+            font-family: monospace;
+            font-size: 12px;
+            padding-left: 10px;
+            line-height: 20px;
+        }
+    }

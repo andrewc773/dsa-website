@@ -1,92 +1,11 @@
 <!Doctype html>
 <html>
 <head>
-    <style>
-
-    @import url(https://fonts.googleapis.com/css?family=Montserrat);
-    @import url(https://fonts.googleapis.com/css?family=Open+Sans);
-
-    /*********Tag Elements*********/
-    * {
-            
-            margin: 0;
-            padding: 0;
-            text-decoration: 0;
-            list-style: none;
-            
-        }
-
-        main {
-        padding-bottom: 20px;
-        display: grid;
-        justify-items: center;
-        width: 100vw;
-        background-color: white;
-        
-    }
-    /*********Classes*********/
-
-    .ds-btn {
-        position: relative;
-        top: 0;
-        transition: top ease 0.3s;
-    }
-
-    .ds-btn:hover {
-        top: -15px;
-        
-    }
-
-    .ds-btn {
-        padding-top: 25px;
-     }
- 
-     .ds-buttons {
-         
-         max-width: 100%;
-         margin: 0 auto;
-         display: grid;
-         grid-gap: 1rem;
-
-     }
-    /*Media Queries*/
-
-
-    @media(max-width: 1200px) {
-
-        * {
-            overflow-x: hidden;
-        }
-    }
- 
-     @media (min-width: 600px) {
-         .ds-buttons { grid-template-columns: repeat(2, 1fr); }
-
-
-     }
- 
-     @media (min-width: 900px) {
-         .ds-buttons { grid-template-columns: repeat(3, 1fr); }
-     }
- 
-     @media (min-width: 1200px) {
-         .ds-buttons { grid-template-columns: repeat(5, 1fr); }
-
-         main {
-            margin-bottom: 90px;
-            margin-top:20px;
-            
-         }
-     }
-
-
-
-        
-    </style>
 
     <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
     <script src="my-js/core.js"></script>
     <script src="my-js/index.js"></script>
+    <link rel="stylesheet" href="my-css/index.css">
 </head>
 <body>
     <header id = "header">
